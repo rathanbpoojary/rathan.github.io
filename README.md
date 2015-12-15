@@ -19,8 +19,9 @@ Applozic-ios
 
 
 
-# rest-api
-Applozic-rest-api
+# https://github.com/rathanbpoojary/rathan.github.io/wiki/Getting-Started 
+ 
+https://github.com/rathanbpoojary/rathan.github.io/wiki/Getting-Started 
 
 
 

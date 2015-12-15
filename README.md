@@ -19,9 +19,6 @@ Applozic-ios
 
 
 
-# https://github.com/rathanbpoojary/rathan.github.io/wiki/Getting-Started 
- 
-https://github.com/rathanbpoojary/rathan.github.io/wiki/Getting-Started 
 
 
 

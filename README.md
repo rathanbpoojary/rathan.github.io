@@ -9,8 +9,18 @@ Instructions for Web Plugin: https://applozic.readme.io/docs/applozicwebplugin-g
 Want to contribute? Drop us a mail at contact@applozic.com
 
 
-# data
-Applozic-Web-Plugin
+# android
+Applozic-android    
+
+
+
+# dios
+Applozic-ios    
+
+
+
+# rest-api
+Applozic-rest-api
 
 
 

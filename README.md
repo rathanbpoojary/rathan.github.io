@@ -752,7 +752,88 @@ ii) Get messages of logged in user with another user by passing userId, startTim
 ** java **    
 ` public List<Message> getMessages(String userId, Long startTime, Long endTime) { `
 `    ... `
-` }     `
+` }     `           
+
+
+
+
+### Building Own Contact List             
+
+
+
+***Building your own contacts***         
+
+
+
+You can build your own contact in two easy steps by using AppContactService.java api. Sample method **buildContactData()** for adding contacts is present in sample app MainActivity.java.
+
+**Step 1: Build your contact object:**         
+
+
+
+** text **      
+` Contact contact = new Contact(); `
+` contact.setUserId(<userId>); (Unique ID to identify contact ) `
+` contact.setFullName(<full name of contact>); `
+` contact.setEmailId(<EmailId>); `
+` contact.setImageURL(<image http URL OR android resource drawable  >); `
+` (in case of drawable use R.drawable.<resource_name>) `      
+
+
+Example :        
+
+
+** text **      
+` Contact contact = new Contact(); `
+` contact.setUserId("adarshk"); `
+` contact.setFullName("Adarsh"); `
+` contact.setImageURL("R.drawable.applozic_ic_contact_picture_holo_light"); `
+` contact.setEmailId("applozic.connect@gmail.com"); `      
+
+
+**Step 2: add contacts :**
+
+After creating contact object in step1, add your contact using AppContactService.java add() method.
+ 
+Example :        
+
+
+
+** text **     
+` Context context = getApplicationContext(); `
+` AppContactService appContactService = new AppContactService(context); `
+` appContactService.add(contact); `        
+
+
+
+
+**AppContactService.Java at a glance**
+
+
+
+AppContactService.java provides methods you need to add, delete and update contacts.
+
+**add(Contact contact)** :  Add single contact.
+
+**addAll(List<Contact> contactList)** : Add multiple contacts.
+
+**deleteContact(Contact contact)** : Delete contact.
+
+**deleteContactById(String contactId)** : Delete contact by Id.
+
+**getContactById(String contactId )** : Read contact by Id.
+
+**updateContact(Contact contact)** : Update contact.
+
+**upsert(Contact contact)** : update or insert contact.         
+
+
+
+
+
+
+
+
     
 
 

@@ -693,7 +693,14 @@ Sample app with integration is available under [app](https://github.com/AppLozic
 
 
 
-### MobiComKit module         
+### MobiComKit module             
+
+
+
+****Applozic messaging jQuery plugin****       
+
+
+
 
 
 

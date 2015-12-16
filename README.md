@@ -240,7 +240,7 @@ You  can write javascript function which return display name on basis of userId
 Example:         
 
 
-** text **
+** text **     
 ` function displayName(userId) { `
   `  var contact = contacts[userId];  // used contacts variable as given above.`
    ` if (typeof contact !== 'undefined') { `
@@ -256,7 +256,7 @@ You  can write javascript function to return user image url on basis of userId
 Example:      
 
 
-** text **
+** text **      
 ` function contactImageSrc(userId) { `
   `   var contact = contacts[userId];   // used contacts variable as given above. `
   `   if (typeof contact !== 'undefined') { `
@@ -272,7 +272,7 @@ You can call below function to load contact list by passing contacts json as giv
 
 
 
-** text **
+** text **      
 ` var contacts = {"contacts": [{"userId": "user1", "displayName": "Devashish", "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, {"userId": "user2", "displayName": "Adarsh", "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, {"userId": "user3", "displayName": "Shanki", "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}]}; `
  
 ` $applozic.fn.applozic('loadContacts', 'put-contacts-json-here); // contacts json format given above `       
@@ -283,7 +283,7 @@ Step 10: Function to load tab dynamically (optional)
 You can call below function to directly open any contact tab dynamically :       
 
 
-**text **
+**text **      
 ` $applozic.fn.applozic('loadTab', 'put-userId-here'); `
   
   

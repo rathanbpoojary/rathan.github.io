@@ -186,7 +186,105 @@ Step 3: Initialize plugin using script given below also given in message.html (I
       contactDisplayName: displayName, 
       contactDisplayImage: contactImageSrc, 
       desktopNotification: true
-}); `
+}); `     
+
+
+
+Step 4: Change the following parameters in above script :     
+
+
+
+** text **
+` userId: 'User Unique id',                 // required `
+` appId: 'Your application key',             // required `
+` contactDisplayName: 'Callback function to return contact name by userId', `
+      ` // function should receive one parameter i.e userId. Example given in Step:7 (optional) `
+` contactDisplayImage: 'Callback function to return image src of contact by userId', `
+      ` // function should receive one parameter i.e userId. Example given in Step:8 (optional) `
+` desktopNotification: true or false `
+`       // for chrome browser enable or disable desktop notifications for incoming messages (optional) `     
+
+
+
+*Note : Examples of callback functions and json format is given in below in step 7,8 and also given in message.html
+
+Step5 : To customize layout of plugin :
+
+You can modify **mck-sidebox-1.0.css** class located at :      
+
+
+
+** text **     
+`  https://github.com/AppLozic/Applozic-Web-Plugin/blob/master/message/advanced/css/app/mck-sidebox-1.0.css `    
+
+Step 6: To add auto suggest users list in search field (optional)
+
+You can bind auto suggest plugin on input search field with id given below:    
+
+
+** text **     
+` mck-search `     
+
+Contacts Json format is given below as a reference used in **displayName()** and **contactImageSrc()** :     
+
+
+** text **      
+` var contacts = {"user1": {"userId": "user1", "displayName": "Devashish", "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, "user2": {"userId": "user2", "displayName": "Adarsh", "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, "user3": {"userId": "user3", "displayName": "Shanki", "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}}; `      
+
+
+
+Step 7: Callback function to get contact display name from userId (optional)
+
+You  can write javascript function which return display name on basis of userId 
+
+Example:         
+
+
+** text **
+` function displayName(userId) { `
+  `  var contact = contacts[userId];  // used contacts variable as given above.`
+   ` if (typeof contact !== 'undefined') { `
+`         return contact.displayName; `
+   ` } `
+`} `     
+
+
+Step 8: Callback function to get contact image url  from userId (optional)
+
+You  can write javascript function to return user image url on basis of userId 
+
+Example:      
+
+
+** text **
+` function contactImageSrc(userId) { `
+  `   var contact = contacts[userId];   // used contacts variable as given above. `
+  `   if (typeof contact !== 'undefined') { `
+  `       return contact.photoLink; `
+  `   } `
+` } `      
+
+
+
+Step 9: Function to load contact list dynamically (optional)
+
+You can call below function to load contact list by passing contacts json as given in variable contacts :      
+
+
+
+** text **
+` var contacts = {"contacts": [{"userId": "user1", "displayName": "Devashish", "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, {"userId": "user2", "displayName": "Adarsh", "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, {"userId": "user3", "displayName": "Shanki", "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}]}; `
+ 
+` $applozic.fn.applozic('loadContacts', 'put-contacts-json-here); // contacts json format given above `       
+
+
+Step 10: Function to load tab dynamically (optional)
+
+You can call below function to directly open any contact tab dynamically :       
+
+
+**text **
+` $applozic.fn.applozic('loadTab', 'put-userId-here'); `
   
   
   

@@ -10,7 +10,26 @@ Instructions for Web Plugin: [https://applozic.readme.io/docs/applozicwebplugin-
 Want to contribute? Drop us a mail at growth@applozic.com     
 
 
-### Getting Started    
+### Getting Started        
+    
+    
+  **Welcome to the Applozic-Web-Plugin**
+
+# Applozic messaging jQuery plugin
+
+Integrate messaging plugin into your web application.
+
+A small jQuery plugin for integrating messaging into your web page to directly send and receive messages to other users via Applozic messaging platform and also to see your latest conversations.
+
+
+Add Applozic messaging plugin into your web application :
+
+
+Step 1: Register at **https://www.applozic.com/** to get the application key.
+
+Step 2: For the standard user interface, add the following Applozic messaging plugin script file before **`</head>`** into your web page:
+
+
 
 
 

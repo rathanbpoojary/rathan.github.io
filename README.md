@@ -704,17 +704,17 @@ Sample app with integration is available under [app](https://github.com/AppLozic
 Classes ending with *ClientService.java interacts with the server.
 
 
-**1. Account registration**:
+**1. Account registration**:      
    
-     Class: com.applozic.mobicomkit.api.account.register.RegisterUserClientService      
+Class: com.applozic.mobicomkit.api.account.register.RegisterUserClientService      
 
 ** java **          
 ` new RegisterUserClientService(activity).createAccount(USER_EMAIL, USER_ID, USER_PHONE_NUMBER, GCM_REGISTRATION_ID);   `      
   
 
-**2. Send message**:
+**2. Send message**:    
 
-     Class: com.applozic.mobicomkit.api.conversation.MobiComConversationService         
+Class: com.applozic.mobicomkit.api.conversation.MobiComConversationService         
 
 
 **  java **      
@@ -723,14 +723,14 @@ Classes ending with *ClientService.java interacts with the server.
 `  } `     
 
 
-Example: new MobiComConversationService(activity).sendMessage(new 
-     Message("contact@applozic.com", "hello test"));         
+Example: new MobiComConversationService(activity).sendMessage(new     
+Message("contact@applozic.com", "hello test"));         
 
 
 
-**3. Message list**:
+**3. Message list**:      
 
-     Class: com.applozic.mobicomkit.api.conversation.MobiComConversationService
+Class: com.applozic.mobicomkit.api.conversation.MobiComConversationService
 
   
 i) Get single latest message from each conversation        
@@ -744,8 +744,8 @@ i) Get single latest message from each conversation
 
 
 
-ii) Get messages of logged in user with another user by passing userId, startTime and
-        endTime. startTime and endTime are considered in time in milliseconds from 1970.       
+ii) Get messages of logged in user with another user by passing userId, startTime and      
+ endTime. startTime and endTime are considered in time in milliseconds from 1970.       
 
 
 

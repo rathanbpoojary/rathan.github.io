@@ -156,9 +156,9 @@ For more customization  visit:
 
 
 
-**Welcome to the Applozic-Web-Plugin**
+***Welcome to the Applozic-Web-Plugin***
 
-# Applozic messaging jQuery plugin
+****Applozic messaging jQuery plugin****
 
 Integrate messaging plugin into your web application.
 

@@ -194,7 +194,7 @@ Step 4: Change the following parameters in above script :
 
 
 
-** text **
+** text **      
 ` userId: 'User Unique id',                 // required `
 ` appId: 'Your application key',             // required `
 ` contactDisplayName: 'Callback function to return contact name by userId', `
@@ -284,7 +284,37 @@ You can call below function to directly open any contact tab dynamically :
 
 
 **text **      
-` $applozic.fn.applozic('loadTab', 'put-userId-here'); `
+` $applozic.fn.applozic('loadTab', 'put-userId-here'); `         
+
+
+
+
+# ANDROID SDK    
+
+
+### Overview         
+
+
+
+Integrate messaging into your mobile apps and website without developing or maintaining any infrastructure. Register at https://www.applozic.com to get the application id.
+
+Instructions for Android: [Android/Getting Started](https://applozic.readme.io/docs/android-gettingstarted)
+
+Want to contribute? Drop us a mail at devashish@applozic.com            
+
+
+
+
+### Getting Started       
+
+
+**** Quick Start for Applozic Messaging ****      
+
+
+
+To integrate messaging into your android app, register at [Applozic](https://www.applozic.com/) to get the application key.
+
+**Step 1: Add the following in build.gradle**:
   
   
   

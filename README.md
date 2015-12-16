@@ -148,7 +148,34 @@ You can call below function to directly open any contact tab dynamically :
 
 For more customization  visit:
 
-**https://applozic.readme.io/v1.0/docs/customized-applozic-web-plugin**
+**https://applozic.readme.io/v1.0/docs/customized-applozic-web-plugin**      
+
+
+
+### Customized - Applozic-Web-Plugin     
+
+
+
+**Welcome to the Applozic-Web-Plugin**
+
+# Applozic messaging jQuery plugin
+
+Integrate messaging plugin into your web application.
+
+A small jQuery plugin for integrating messaging into your web page to directly send and receive messages to other users via **Applozic** messaging platform and also to see your latest conversations.
+
+Add Applozic messaging plugin into your web application :
+
+
+Step 1: Register at **https://www.applozic.com/** to get the application key.
+
+
+Step 2: For customization - where you can modify the UI, checkout **https://github.com/AppLozic/Applozic-Web-Plugin/tree/master/message/advanced**
+
+Open **message.html**  file as a reference and add all scripts and html in your web page in same order as given in message.html. 
+
+
+Step 3: Initialize plugin using script given below also given in message.html (Initialize once page load completely, preferable in document.ready function) :
   
   
   

@@ -523,7 +523,7 @@ Replace APP_PARENT_ACTIVITY with your app's parent activity.
 
 `   @Override `
 `   public void onSuccess(RegistrationResponse registrationResponse, Context context) { `
-`      
+     
             
 `  } `
 

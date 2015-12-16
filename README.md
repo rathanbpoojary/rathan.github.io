@@ -825,7 +825,41 @@ AppContactService.java provides methods you need to add, delete and update conta
 
 **updateContact(Contact contact)** : Update contact.
 
-**upsert(Contact contact)** : update or insert contact.         
+**upsert(Contact contact)** : update or insert contact.       
+
+
+
+# PLATFORM API     
+
+### Overview        
+
+
+Integrate native app message communication to your product without developing and maintaining any infrastructure.
+Are you looking for platform-native Sdks to integrate into your app. All you need to do is include the Applozic SDK as a library in your project and a couple of lines of code. We will take care of rest things from server hosting, database, maintenance to analytics.     
+
+
+### Rest API         
+
+
+
+***Create User Account***        
+
+
+
+**Create User Account URL**: https://apps.applozic.com/rest/ws/registration/v1/register
+**Method Type**: POST
+**Content-Type**: application/json, application/xml
+
+**Parameters**: user (json object) will be passed as a parameter with following properties :-      
+
+
+
+
+
+
+
+
+
 
 
 

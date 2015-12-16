@@ -41,7 +41,6 @@ Step 2: For the standard user interface, add the following Applozic messaging pl
  
  
 ** text **    
-
 ` <script type="text/javascript" >window.applozic.init({userId: 'user id', appId: 'application key', contactDisplayName: displayName, contactDisplayImage: contactImageSrc, desktopNotification: true});</script> `    
 
 
@@ -52,7 +51,6 @@ Step 4: Replace the following parameters in script:
 
 
 ** text **      
-
 ` userId: 'User Unique id',                 // required
 appId: 'Your application key'             // required
 contactDisplayName: 'Callback function to return contact name by userId',
@@ -74,7 +72,6 @@ You can bind auto suggest plugin on input search field with id given below:
 
 
 ** text **      
-
 ` mck-search `     
 
 
@@ -84,7 +81,6 @@ Contacts Json format is given below as a reference used in **displayName()** and
 
 
 ** text **    
-
 ` var contacts = {"user1": {"userId": "user1", "displayName": "Devashish", "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, "user2": {"userId": "user2", "displayName": "Adarsh", "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, "user3": {"userId": "user3", "displayName": "Shanki", "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}}; `    
 
 
@@ -98,7 +94,6 @@ Example:
 
 
 ** text **    
-
 ` function displayName(userId) {
    var contact = contacts[userId];  // used contacts variable as given above.
    if (typeof contact !== 'undefined') {
@@ -117,7 +112,6 @@ Example:
 
 
 ** text **     
-
 ` function contactImageSrc(userId) {
     var contact = contacts[userId];   // used contacts variable as given above.
     if (typeof contact !== 'undefined') {
@@ -135,7 +129,6 @@ You can call below function to load contact list by passing contacts json as giv
 
 
 ** text **    
-
 ` var contacts = {"contacts": [{"userId": "user1", "displayName": "Devashish", "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, {"userId": "user2", "displayName": "Adarsh", "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, {"userId": "user3", "displayName": "Shanki", "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}]};
 
 $applozic.fn.applozic('loadContacts', 'put-contacts-json-here'); // contacts json format given above `    
@@ -149,7 +142,6 @@ You can call below function to directly open any contact tab dynamically :
 
 
 ** text **      
-
 ` $applozic.fn.applozic('loadTab', 'put-userId-here'); `     
 
 

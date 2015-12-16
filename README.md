@@ -1,7 +1,8 @@
-# APPLOZIC WEB PLUGIN  
+# APPLOZIC WEB PLUGIN     
 
 
-** Overview **    
+
+**Getting Started** 
 
 
 

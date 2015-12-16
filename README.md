@@ -1,6 +1,6 @@
 * # APPLOZIC WEB PLUGIN   
 #iuh
-**Getting Started**    
+*Getting Started*   
 Applozic-Web-Plugin    
 
 

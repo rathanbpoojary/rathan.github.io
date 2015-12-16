@@ -179,7 +179,7 @@ Step 3: Initialize plugin using script given below also given in message.html (I
 
 
 
-** text **
+** text **    
 ` $applozic.fn.applozic({userId: 'customer-1', appId: 'applozic-sample-app',
       ojq: $original,
       readConversation: readMessage,

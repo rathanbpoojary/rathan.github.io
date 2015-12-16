@@ -1,4 +1,4 @@
-## APPLOZIC WEB PLUGIN
+# APPLOZIC WEB PLUGIN
 **Getting Started**    
 Applozic-Web-Plugin    
 

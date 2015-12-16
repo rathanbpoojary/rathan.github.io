@@ -1,7 +1,6 @@
-# APPLOZIC WEB PLUGIN    
-***      
-#### Overview    
-jhvjhvbjhbvjhbjhbjhb
+# APPLOZIC WEB PLUGIN     
+
+###Overview    
 
 
 

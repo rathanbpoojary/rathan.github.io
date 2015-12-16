@@ -10,7 +10,7 @@ Instructions for Web Plugin: [https://applozic.readme.io/docs/applozicwebplugin-
 Want to contribute? Drop us a mail at growth@applozic.com     
    
    
-## Getting Started
+##Getting Started
 
 
 

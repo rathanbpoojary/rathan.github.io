@@ -521,23 +521,23 @@ Replace APP_PARENT_ACTIVITY with your app's parent activity.
 ** java **        
 ` UserLoginTask.TaskListener listener = new UserLoginTask.TaskListener() {  `
 
-             `   @Override `
-             `   public void onSuccess(RegistrationResponse registrationResponse, Context context) { `
-             `      
-                   
-             `  } `
+`   @Override `
+`   public void onSuccess(RegistrationResponse registrationResponse, Context context) { `
+`      
+            
+`  } `
 
-             `   @Override `
-             `   public void onFailure(RegistrationResponse registrationResponse, Exception exception) { `
+`   @Override `
+`   public void onFailure(RegistrationResponse registrationResponse, Exception exception) { `
                   
-             `   } `
-            ` }; `
+`   } `
+` }; `
 
-            ` User user = new User(); `
-            ` user.setUserId(userId); `
-            ` user.setEmail(email); //optional `
+` User user = new User(); `
+` user.setUserId(userId); `
+` user.setEmail(email); //optional `
 
-            ` new UserLoginTask(user, listener, this).execute((Void) null); `            
+` new UserLoginTask(user, listener, this).execute((Void) null); `                   
 
 
 If it is a new user, new user account will get created else existing user will be logged in to the application.

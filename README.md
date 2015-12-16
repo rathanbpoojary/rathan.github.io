@@ -560,7 +560,7 @@ SenderId is a unique numerical value created when you configure your API project
 
 
 If you already have a GCM code in your app, then copy the following code at the place where you are getting the GCM registration id.       
-** java **
+** java **     
 ` PushNotificationTask pushNotificationTask = null `
 `       PushNotificationTask.TaskListener listener = new PushNotificationTask.TaskListener() { `
 

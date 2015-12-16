@@ -697,7 +697,69 @@ Sample app with integration is available under [app](https://github.com/AppLozic
 
 
 
-****Applozic messaging jQuery plugin****       
+****Applozic messaging jQuery plugin****          
+
+
+
+Classes ending with *ClientService.java interacts with the server.
+
+
+**1. Account registration**:
+   
+     Class: com.applozic.mobicomkit.api.account.register.RegisterUserClientService      
+
+** java **          
+` new RegisterUserClientService(activity).createAccount(USER_EMAIL, USER_ID, USER_PHONE_NUMBER, GCM_REGISTRATION_ID);   `      
+  
+
+**2. Send message**:
+
+     Class: com.applozic.mobicomkit.api.conversation.MobiComConversationService         
+
+
+**  java **      
+`  public void sendMessage(Message message) { `
+`  ... `
+`  } `     
+
+
+Example: new MobiComConversationService(activity).sendMessage(new 
+     Message("contact@applozic.com", "hello test"));         
+
+
+
+**3. Message list**:
+
+     Class: com.applozic.mobicomkit.api.conversation.MobiComConversationService
+
+  
+i) Get single latest message from each conversation        
+
+
+
+** java **      
+`public synchronized List<Message> getLatestMessagesGroupByPeople() { `
+` ... `
+`} `               
+
+
+
+ii) Get messages of logged in user with another user by passing userId, startTime and
+        endTime. startTime and endTime are considered in time in milliseconds from 1970.       
+
+
+
+** java **    
+` public List<Message> getMessages(String userId, Long startTime, Long endTime) { `
+`    ... `
+` }     `
+    
+
+
+    
+  
+
+    
 
 
 

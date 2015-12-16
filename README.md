@@ -175,7 +175,18 @@ Step 2: For customization - where you can modify the UI, checkout **https://gith
 Open **message.html**  file as a reference and add all scripts and html in your web page in same order as given in message.html. 
 
 
-Step 3: Initialize plugin using script given below also given in message.html (Initialize once page load completely, preferable in document.ready function) :
+Step 3: Initialize plugin using script given below also given in message.html (Initialize once page load completely, preferable in document.ready function) :     
+
+
+
+** text **
+` $applozic.fn.applozic({userId: 'customer-1', appId: 'applozic-sample-app',
+      ojq: $original,
+      readConversation: readMessage,
+      contactDisplayName: displayName, 
+      contactDisplayImage: contactImageSrc, 
+      desktopNotification: true
+}); `
   
   
   

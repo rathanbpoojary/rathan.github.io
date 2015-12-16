@@ -13,9 +13,9 @@ Want to contribute? Drop us a mail at growth@applozic.com
 ### Getting Started        
     
     
-  **Welcome to the Applozic-Web-Plugin**
+  ***Welcome to the Applozic-Web-Plugin***
 
-**Applozic messaging jQuery plugin**
+****Applozic messaging jQuery plugin****
 
 Integrate messaging plugin into your web application.
 

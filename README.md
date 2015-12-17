@@ -952,7 +952,32 @@ Authorization Code: Basic YWJjOmFoQnpmbTF2WW1rdFkyOXRMV0ZzY0doaGNpWUxFZ1pUZFZWel
 | Authorization: Authorization Code  |
 | ------------- |
 | UserId-Enabled:true |
-| Application-Key:  "Your Application Key"  | 
+| Application-Key:  "Your Application Key"  |           
+
+
+
+
+****Send Message****          
+
+
+
+**SEND MESSAGE URL**: https://apps.applozic..om/rest/ws/mobicomkit/v1/message/send
+**Method Type**: POST
+**Content-Type**: application/json, application/xml
+
+**Parameters**: messagePxy (json object) will be passed as a parameter with following properties :-               
+
+
+
+
+| Parameter  | Required | Default  | Description |
+| ------------- | ------------- | ------------- | ------------- |
+| to  | Yes  | First Header  | User id to which you want to send message |
+| deviceKeyString  | Yes  | First Header  | User unique device key |
+| message  | Yes  | First Header  | Text Message |
+| type  | Yes  | First Header  | Message type |
+| sendToDevice  |   | First Header  |  |
+
 
 
 

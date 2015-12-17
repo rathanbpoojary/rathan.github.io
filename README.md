@@ -924,7 +924,37 @@ Get token to make api calls-
 | Parameter  | Required | Default  | Description |
 | ------------- | ------------- | ------------- | ------------- |
 | applicationId  | Yes  |   | Your Application Key  |
-| userid  | Yes  |   | User id  |
+| userid  | Yes  |   | User id  |         
+
+
+**Response**:
+ 
+Sample json-       
+
+
+** test **
+` {"token":"AHRlWrqPBtxeFHrSi9n5QidJKllzpyMAOMVkLj","emailId":"abc@xyz.com","userId":"abc","deviceKeyString":"ahBzfm1vYmktY29tLWFscGhhciYLEgZTdVVzZX,"timeZoneOffset":"19800000"} `       
+
+
+
+Use **deviceKeyString** from above response to create Authorization Code
+ 
+**Authorization Code** : Basic Base64Encode of userId:deviceKeyString
+
+**Example**- 
+If the userId is abc and deviceKeyString is ahBzfm1vYmktY29tLWFscGhhciYLEgZTdVVzZX, then the authorization code will be:
+
+Authorization Code: Basic YWJjOmFoQnpmbTF2WW1rdFkyOXRMV0ZzY0doaGNpWUxFZ1pUZFZWelpY
+
+**All request should contain these 3 headers** -           
+
+
+
+
+
+| Authorization: Authorization Code |
+| UserId-Enabled:true |
+| Application-Key:  "Your Application Key" |
 
 
 

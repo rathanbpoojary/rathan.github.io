@@ -933,7 +933,8 @@ Sample json-
 
 
 ** test **
-` {"token":"AHRlWrqPBtxeFHrSi9n5QidJKllzpyMAOMVkLj","emailId":"abc@xyz.com","userId":"abc","deviceKeyString":"ahBzfm1vYmktY29tLWFscGhhciYLEgZTdVVzZX,"timeZoneOffset":"19800000"} `       
+` {"token":"AHRlWrqPBtxeFHrSi9n5QidJKllzpyMAOMVkLj",                 "emailId":"abc@xyz.com","userId":"abc","deviceKeyString":"ahBzfm1vYmktY29tLWFscGhhciYLEgZTdVVzZX,     `      
+` "timeZoneOffset":"19800000"} `       
 
 
 

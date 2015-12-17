@@ -949,15 +949,6 @@ Authorization Code: Basic YWJjOmFoQnpmbTF2WW1rdFkyOXRMV0ZzY0doaGNpWUxFZ1pUZFZWel
 **All request should contain these 3 headers** -           
 
 
-
-
-
- |      
- |     
- |       
-
-
-
 Authorization: Authorization Code  |
 ------------- |
 UserId-Enabled:true |

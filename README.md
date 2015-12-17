@@ -1279,7 +1279,39 @@ Once your app receive notification, pass it to applozic handler for applozic not
  ` if (!applozicProcessed) { `
   ` //Note: notification for app `
 `  } `
+` } `       
+
+
+
+**c) Handling app launch on notification click :**          
+
+
+** Objective-C **      
+` - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions { `
+   
+
+`  // Override point for customization after application launch. `
+
+ `   NSLog(@"launchOptions: %@", launchOptions); `
+    
+  `  if (launchOptions != nil) `
+  `  { `
+   `     NSDictionary *dictionary = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey]; `
+  `      if (dictionary != nil) `
+  `      { `
+  `          NSLog(@"Launched from push notification: %@", dictionary); `
+  `          ALPushNotificationService *pushNotificationService = [ALPushNotificationService init]; `
+`            BOOL applozicProcessed = [pushNotificationService processPushNotification:dictionary updateUI:NO]; `
+ `           if (!applozicProcessed) { `
+   `             //Note: notification for app `
+  `          } `
+   `     } `
+   ` } `
+    
+   `  return YES; `
 ` } `
+
+
 
 
    

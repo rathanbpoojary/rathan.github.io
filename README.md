@@ -1309,7 +1309,76 @@ Once your app receive notification, pass it to applozic handler for applozic not
    ` } `
     
    `  return YES; `
-` } `
+` } `          
+
+
+
+
+**Image assets upload** 
+
+Add following image assets to your projects: 
+
+[https://github.com/AppLozic/Applozic-iOS-SDK/tree/master/sample-with-framework/applozicdemo/Assets.xcassets/applogic_image](https://github.com/AppLozic/Applozic-iOS-SDK/tree/master/sample-with-framework/applozicdemo/Assets.xcassets/applogic_image)
+
+
+**Launching applozic message screen** 
+
+Below code will explain how to launch applozic message view. you can put this according to your need (like on click of any button, add any button at the navigation bar or tab ).            
+
+
+** Objective - C **       
+` UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Applozic" `
+   `       bundle:[NSBundle bundleForClass:ALMessagesViewController.class]]; `
+
+` UIViewController *theTabBar = [storyboard    			instantiateViewControllerWithIdentifier:@"messageTabBar"]; `
+
+` [self presentViewController:theTabBar animated:YES completion:nil];   `           
+
+
+
+
+
+**Launching specific user's conversation:
+**
+To launch conversation for a particular user (most common use case is to launch customer support conversation directly), use below code:         
+
+
+
+
+** Objective - C **        
+` UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Applozic" `
+`  bundle:[NSBundle bundleForClass:ALChatViewController.class]]; `
+ `    ALChatViewController *chatView =(ALChatViewController*) [storyboard ` `instantiateViewControllerWithIdentifier:@"ALChatViewController"]; ` 
+    ` chatView.contactIds =@"<USER_ID>";//SET specific USER'S ID  `
+   `  UINavigationController *conversationViewNavController = [[UINavigationController alloc] initWithRootViewController:chatView]; `
+    ` [self presentViewController:conversationViewNavController animated:YES completion:nil]; `          
+    
+    
+    
+    
+    **Note : make sure you have already registered your login user(User Registration) and completed  push notification registration before launching Applozic message screen.**          
+    
+    
+    
+    
+    
+    ****Logout****           
+    
+    
+    
+    
+    Paste the following code on logout.             
+    
+    
+    ** Objective - C **           
+   ` ALRegisterUserClientService *registerUserClientService = [[ALRegisterUserClientService alloc] init]; `
+   `     [registerUserClientService logout];  `        
+   
+   
+   
+   
+
+
 
 
 

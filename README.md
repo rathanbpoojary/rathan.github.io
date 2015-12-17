@@ -1356,23 +1356,21 @@ To launch conversation for a particular user (most common use case is to launch 
     
     
     
-    **Note : make sure you have already registered your login user(User Registration) and completed  push notification registration before launching Applozic message screen.**          
+ **Note : make sure you have already registered your login user(User Registration) and completed  push notification registration before launching Applozic message screen.**          
+    
+    
+    
+****Logout****           
     
     
     
     
-    
-    ****Logout****           
-    
+Paste the following code on logout.             
     
     
-    
-    Paste the following code on logout.             
-    
-    
-    ** Objective - C **           
-   ` ALRegisterUserClientService *registerUserClientService = [[ALRegisterUserClientService alloc] init]; `
-   `     [registerUserClientService logout];  `        
+** Objective - C **           
+  ` ALRegisterUserClientService *registerUserClientService = [[ALRegisterUserClientService alloc] init]; `
+  `     [registerUserClientService logout];  `        
    
    
    

@@ -1109,7 +1109,54 @@ In order to provide consistent service to all the users, there is a limitation o
 | ------------- | ------------- | 
 | success  | Request is successfully processedl  |
 | error  |This will come if any exception occurs on server or all the parameters are null. In case of any exception contact devashish@applozic.com  |
-| UnAuthorized Access  | This will come if the emailId and apiKey doesn't match or your API Pack got expired.  |        
+| UnAuthorized Access  | This will come if the emailId and apiKey doesn't match or your API Pack got expired.  |       
+
+
+
+# IOS SDK           
+
+
+
+### Overview        
+
+
+
+
+Integrate messaging into your mobile apps and website without developing or maintaining any infrastructure. Register at https://www.applozic.com to get the application id.
+
+Instructions for IOS: IOS/Getting Started
+
+Want to contribute? Drop us a mail at devashish@applozic.com            
+
+
+
+
+
+
+### Getting Started                 
+
+
+
+
+**Create your Application**
+
+a )  [**Sign-up**](https://www.applozic.com/signup.html)  with applozic to get your applicationId.
+
+b ) Once you signed up create your Application with required details on admin dashboard. Upload your push-notification certificate to our portal to enable real time notification.         
+
+
+
+
+![dashboard-blank-content](http://localhost:9090/applozic/resources/images/dashboard-blank-content.png)
+
+
+
+
+
+
+
+
+
 
 
 

@@ -856,11 +856,8 @@ Are you looking for platform-native Sdks to integrate into your app. All you nee
 
 
 | Parameter  | Required | Default | Description |
-| ------------- | ------------- | | ------------- | | ------------- | 
+| ------------- | ------------- | | ------------- | | ------------- |       
 | Content Cell  | Content Cell  | | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | | Content Cell  | Content Cell  |    
-| Content Cell  | Content Cell  | | Content Cell  | Content Cell  |
-
 
 
 

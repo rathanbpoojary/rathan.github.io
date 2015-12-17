@@ -857,17 +857,17 @@ Are you looking for platform-native Sdks to integrate into your app. All you nee
 
 | Parameter  | Required | Default | Description |
 | ------------- | ------------- | ------------- | ------------- |       
-| Content Cell  | Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  | Content Cell  |
+| userId  | Yes  |   | User name  |
+| emailId  | No  | null  | User email address  |
+| password  | No  | null  | User account password  |
+| registrationId  | No  | null  | User device registrationId  |
+| contactNumber  | No  | null  | User contact number  |
+| countryCode  | No  | null | User country code  |
+| emailVerified  | No  | false  | If user email address is verified then true or else false  |
+| timezone  | No  | deviceType  | User device timezone  |
+| roleName  | No  | USER  | Value should be USER  |
+| applicationId  | Yes  |   | Key of the application which you had created.  |
+| deviceType  | Yes  |   | Value should be 1l  |
 
 
 

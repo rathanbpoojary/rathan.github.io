@@ -1382,7 +1382,7 @@ Paste the following code on logout.
 
 Applozic framework provides convenient APIs for building your own contact. Developers can build and store contacts in three different ways. 
 
-## **Build your contact:** 
+ **Build your contact:** 
 
 ** a ) Simple method to create your contact is to create contact object.
 **                 
@@ -1445,7 +1445,7 @@ you can directly build contact from dictionary,all you have to do is just pass a
  
  
  
- ## **Save Your Contact:** 
+ **Save Your Contact:** 
 
 Once contacts has been created, you need to save it.  APIs are provided by Applozic to save contacts. 
 

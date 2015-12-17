@@ -1497,8 +1497,7 @@ You can build your contact service using applozic contact apis. Below is the sam
 ` //For purgeing single contacts `
 
 ` -(BOOL)purgeContact:(ALContact *)contact{ `
-    
-    ` return [ alContactDBService purgeContact:contact]; `
+ ` return [ alContactDBService purgeContact:contact]; `
 `  } `
 
 
@@ -1587,9 +1586,7 @@ You can build your contact service using applozic contact apis. Below is the sam
    ` contact3.contactImageUrl = @"http://tinyhousetalk.com/wp-content/uploads/320-Sq-Ft-Orange-Container-Guest-House-00.jpg";`
 `    contact3.localImageResourceName = nil;`
     
-
-    
-    `//Contact -------- Example with json `
+ `//Contact -------- Example with json `
     
  `   NSString *jsonString =@"{\"userId\": \"applozic\",\"fullName\": \"Applozic\",\"contactNumber\": \"9535008745\",\"displayName\":` `\"Applozic Support\",\"contactImageUrl\": \"https://applozic.com/resources/images/aboutus/rathan.jpg\",\"email\":` `\"devashish@applozic.com\",\"localImageResourceName\":null}"; `
     

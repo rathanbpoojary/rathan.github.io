@@ -1256,7 +1256,31 @@ In your AppDelegate’s **didRegisterForRemoteNotificationsWithDeviceToken **met
  `           NSLog(@"Registration response from server:%@", rResponse); `
   `  }]; `
   `  } `
+` } `           
+
+
+
+
+**b) Receiving push notification:**
+
+Once your app receive notification, pass it to applozic handler for applozic notification processing.             
+
+
+** Objective-C **      
+` - (void)application:(UIApplication*)application didReceiveRemoteNotification:(NSDictionary*)dictionary `
+` { `
+   `  NSLog(@"Received notification: %@", dictionary); `
+   
+`  ALPushNotificationService *pushNotificationService = [[ALPushNotificationService alloc] init]; `
+ ` BOOL applozicProcessed = [pushNotificationService processPushNotification:dictionary updateUI:[[UIApplication sharedApplication] ` ` applicationState] == UIApplicationStateActive]; `
+  
+` //IF not a appplozic notification, process it  ` 
+  
+ ` if (!applozicProcessed) { `
+  ` //Note: notification for app `
+`  } `
 ` } `
+
 
    
    

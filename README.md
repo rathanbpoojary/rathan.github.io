@@ -1147,7 +1147,95 @@ b ) Once you signed up create your Application with required details on admin da
 
 
 
-![dashboard-blank-content](http://localhost:9090/applozic/resources/images/dashboard-blank-content.png)
+![dashboard-blank-content](http://localhost:9090/applozic/resources/images/dashboard-blank-content.png)         
+
+
+
+c) Once you create your application you can see your application-Id listed on admin dashboard. Please use same applicationId explained in further steps.          
+
+
+
+
+![dashboard-blank-content](http://localhost:9090/applozic/resources/images/dashboard-content.png)         
+
+
+
+
+
+**Installing the iOS SDK** 
+
+**ADD APPLOZIC FRAMEWORK **
+Clone or download the SDK (https://github.com/AppLozic/Applozic-iOS-SDK)
+Get the latest framework "Applozic.framework" from Applozic github repo [**sample project**](https://github.com/AppLozic/Applozic-iOS-SDK/tree/master/sampleapp)
+
+**Add framework to your project:**
+
+i ) Paste Applozic framework to root folder of your project. 
+ii ) Go to Build Phase. Expand  Embedded frameworks and add applozic framework.         
+
+
+
+
+![dashboard-blank-content](http://localhost:9090/applozic/resources/images/dashboard-content.png)        
+
+
+
+**USER REGISTRATION :**
+
+**Create a user : ** 
+After your app login validation, copy the following code to create applozic user and register your user with applozic server.           
+
+
+** Objective-C **           
+`  ALUser *user = [[ALUser alloc] init]; `
+   `  [user setApplicationId:@"applozic-sample-app"]; // REPLACE SAMPLE ID with your application-Id `
+   `  [user setUserId:[self.userIdField text]]; //replace [self.userIdField text] with user's unique id here `
+   ` [user setEmailId:[self.emailField text]]; //optional `     
+   
+   
+   
+   **Register user with Applozic server :**       
+   
+   
+** Objective-C **      
+ ` ALRegisterUserClientService *registerUserClientService = [[ALRegisterUserClientService alloc] init]; `
+    
+` [registerUserClientService initWithCompletion:user withCompletion:^(ALRegistrationResponse *rResponse, NSError *error) { `
+   `     if (error) { `
+   `         NSLog(@"%@",error); `
+   `         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Response" `
+   `                                                             message:rResponse.message delegate: nil cancelButtonTitle:@"Ok" `  ` otherButtonTitles: nil, nil]; `
+`            [alertView show]; `
+   `         return ; `
+   `    } `
+  
+   `     if (rResponse && [rResponse.message containsString: @"REGISTERED"]) `
+   `     {  `
+   `        ALMessageClientService *messageClientService = [[ALMessageClientService alloc] init]; `
+   `         [messageClientService addWelcomeMessage]; `
+   `     } `
+        
+   `     NSLog(@"Registration response from server:%@", rResponse); `
+
+    ` }]; `
+   
+   
+   
+   
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

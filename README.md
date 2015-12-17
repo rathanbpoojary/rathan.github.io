@@ -901,8 +901,30 @@ Create Account Response Example:
 
 
 
-###
+
 ****Authentication****      
+
+
+Authentication is done using BASIC authentication.
+
+Get token to make api calls-      
+
+
+
+
+****Get Authenticaion Key****      
+
+
+**GET AUTHENTICATION KEY URL**: https://apps.applozic.com/tab/initialize.page
+**Method Type**: GET
+**Parameters**:        
+
+
+
+| Parameter  | Required | Default  | Description |
+| ------------- | ------------- | ------------- | ------------- |
+| applicationId  | Yes  |   | Your Application Key  |
+| userid  | Yes  |   | User id  |
 
 
 

@@ -1370,7 +1370,97 @@ Paste the following code on logout.
     
 ** Objective - C **           
   ` ALRegisterUserClientService *registerUserClientService = [[ALRegisterUserClientService alloc] init]; `
-  `     [registerUserClientService logout];  `        
+  `     [registerUserClientService logout];  `           
+  
+  
+  
+  
+### Overview       
+
+
+
+
+Applozic framework provides convenient APIs for building your own contact. Developers can build and store contacts in three different ways. 
+
+## **Build your contact:** 
+
+** a ) Simple method to create your contact is to create contact object.
+**                 
+
+
+
+
+** Objective - C **        
+` ALContact *contact1 = [[ALContact alloc] init]; `
+`contact1.userId = @"adarshk"; // unique Id for user `
+` contact1.fullName = @"Rathan"; // Fullname of the contact. `
+
+` //Display name for contact. This name would be displayed to the user in chat and contact list. `
+` contact1.displayName = @"Rathan"; `
+` contact1.email = @"123@abc.com"; //Email Id for the contact. `
+` //Contact image url. Contact image would be downloaded automatically from URL. `
+` contact1.contactImageUrl =@" https://www.applozic.com/resources/images/applozic_logo.gif"; ` 
+
+` contact1.localImageResourceName = @"4.jpg"; // If this field is mentioned, Contact image will be taken from local storges. `      
+
+
+
+**b) Building contact from dictionary:
+**
+you can directly build contact from dictionary,all you have to do is just pass a dictionary while initialising obJect.          
+
+
+
+
+** Objective -C **       
+` //Contact ------- Example with dictonary `
+`  NSMutableDictionary *demodictionary = [[NSMutableDictionary alloc] init]; `
+`  [demodictionary setValue:@"aman999" forKey:@"userId"]; `
+`  [demodictionary setValue:@"aman sharma" forKey:@"fullName"]; `
+`  [demodictionary setValue:@"aman" forKey:@"displayName"]; ` 
+`  [demodictionary setValue:@"aman@applozic.com" forKey:@"email"]; `
+`  [demodictionary setValue:@"http://images.landofnod.com/is/image/LandOfNod/ `
+`Letter_Giant_Enough_A_231533_LL/$web_zoom$&wid=550&hei=550&/1308310656/not-giant-enough-letter-a.jpg" forKey:@"contactImageUrl"]; `
+` [demodictionary setValue:nil forKey:@"localImageResourceName"]; `   
+
+` ALContact *contact5 = [[ALContact alloc] initWithDict:demodictionary]; `          
+
+
+
+
+
+**b) Building contact from JSON:
+**           
+
+
+
+** Objective -C **       
+` //Contact -------- Example with json `
+    
+`  NSString *jsonString =@"{\"userId\": \"applozic\",\"fullName\": \"Applozic\",\"contactNumber\": \"9535008745\",\"displayName\": ` ` \"Applozic Support\",\"contactImageUrl\": \"https://applozic.com/resources/images/aboutus/rathan.jpg\",\"email\": `       
+` \"devashish@applozic.com\",\"localImageResourceName\":null}"; `
+    
+ `   ALContact *contact4 = [[ALContact alloc] initWithJSONString:jsonString];  `         
+ 
+ 
+ 
+ 
+ ## **Save Your Contact:** 
+
+Once contacts has been created, you need to save it.  APIs are provided by Applozic to save contacts. 
+
+**saving single contact:
+**             
+
+
+
+
+
+
+
+
+
+
    
    
    

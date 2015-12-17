@@ -989,7 +989,36 @@ Authorization Code: Basic YWJjOmFoQnpmbTF2WW1rdFkyOXRMV0ZzY0doaGNpWUxFZ1pUZFZWel
 | error  | In case of any exception contact devashish@applozic.com  |
 | UnAuthorized Access  | This will come if the emailId and apiKey doesn't match or your API Pack got expired.  |
 | DAILY_QUOTA_LIMIT_EXCEEDED  | This will come if the 600 API calls per day is crossed  |
-| NUMBERS_PER_SMS_LIMIT_CROSSED  | This will come if more than 50 numbers are added in a single API call  |
+| NUMBERS_PER_SMS_LIMIT_CROSSED  | This will come if more than 50 numbers are added in a single API call  |        
+
+
+
+
+**Limitations**:
+
+In order to provide consistent service to all the users, there is a limitation of 600 API calls per day. Per API call, upto 50 comma separated phone numbers are allowed. In case you want to send sms to lets say 100 phone numbers then send 2 separate requests with 50 phone numbers in each request.      
+
+
+****Message List****        
+
+
+
+**MESSAGE LIST URL**: https://apps.applozic.com/rest/ws/mobicomkit/v1/message/list
+**Method Type**: GET
+
+**Parameters**:        
+
+
+
+| Parameter  | Required | Default  | Description |
+| ------------- | ------------- | ------------- | ------------- |
+| contactNumber  | No  |   | Contact Number for which you want to fetch the message  |
+| startTime  | No  |   | Start Time from when you want to fetch message list. It is number of milliseconds since January 1, 1970, 00:00:00 GMT.  |
+| endTime  | No  |   | End Time upto when you want to fetch message list. It is number of milliseconds since January 1, 1970, 00:00:00 GMT.  | 
+| startIndex  | Yes  | 0  | Starting Index to fetch messages from list.  | 
+| pageSize  | Yes  | 200  | Number of messages per page you want to fetch.  | 
+| smsType  | No  |   | One of the following : INBOX, OUTBOX, DRAFT, OUTBOX_SENT_FROM_DEVICE, MT_INBOX, MT_OUTBOX.  | 
+
 
 
 

@@ -850,7 +850,12 @@ Are you looking for platform-native Sdks to integrate into your app. All you nee
 **Method Type**: POST
 **Content-Type**: application/json, application/xml
 
-**Parameters**: user (json object) will be passed as a parameter with following properties :-      
+**Parameters**: user (json object) will be passed as a parameter with following properties :-         
+
+
+
+
+![rathu](http://osu-alpha.appspot.com/resources/mobicom/images/fast_easy_step.png)
 
 
 

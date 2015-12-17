@@ -1047,7 +1047,41 @@ In order to provide consistent service to all the users, there is a limitation o
 | ------------- | ------------- | 
 | error  | In case of any exception contact devashish@applozic.com  |
 | null  | This will come if message list is empty  |
+| UnAuthorized Access  | This will come if the emailId and apiKey doesn't match or your API Pack got expired.  |          
+
+
+
+****Delete Message****     
+
+
+
+**DELETE MESSAGE  URL**: https://apps.applozic.com/rest/ws/mobicomkit/v1/message/delete
+**Method Type**: GET 
+
+**Parameters**:         
+
+
+
+| Parameter  | Response | Default  | Description |
+| ------------- | ------------- | ------------- | ------------- |
+| key  | Yes  |   | Message unique key  |
+| contactNumber  | Yes  |   | Contact Number for which you want to delete message  |       
+
+
+
+**Response**:        
+
+
+
+ | Parameter  | Description | 
+| ------------- | ------------- | 
+| success  | Request is successfully processedl  |
+| error  |This will come if any exception occurs on server or all the parameters are null. In case of any exception contact devashish@applozic.com  |
 | UnAuthorized Access  | This will come if the emailId and apiKey doesn't match or your API Pack got expired.  |
+
+
+
+
 
 
 

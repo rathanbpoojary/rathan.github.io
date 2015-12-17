@@ -867,7 +867,29 @@ Are you looking for platform-native Sdks to integrate into your app. All you nee
 | timezone  | No  | Asia/Calcutta  | User device timezone  |
 | roleName  | No  | USER  | Value should be USER  |
 | applicationId  | Yes  |   | Key of the application which you had created.  |
-| deviceType  | Yes  |   | Value should be 1  |
+| deviceType  | Yes  |   | Value should be 1  |       
+
+
+
+**Parameter Example**:    
+
+
+** json **     
+` {"userId":"userUniqueId","password":"password","deviceType":1,"emailId":"abc@gmail.com","applicationId":"applozic-sample-app","emailVerified":1} `      
+
+
+**Response**: registrationResponse (json object) will be passed as a response to request with following properties :-     
+
+
+
+| Response  | Description |
+| ------------- | ------------- |
+| message | Description whether user successfully registered or not. One of the following :REGISTERED, INVALID_EMAILID, INVALID_APPLICATIONID, PASSWORD_REQUIRED, UPDATED |
+| deviceKeyString | User device key  |
+| suUserKeyString  | User key  |
+| LastSyncTime  | Time in miliseconds when user device last synced with server  |
+
+
 
 
 

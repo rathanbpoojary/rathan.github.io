@@ -878,7 +878,7 @@ Are you looking for platform-native Sdks to integrate into your app. All you nee
 ` {"userId":"userUniqueId","password":"password","deviceType":1,"emailId":"abc@gmail.com","applicationId":"applozic-sample-app","emailVerified":1} `      
 
 
-**Response**: registrationResponse (json object) will be passed as a response to request with following properties :-     
+**Response**: registrationResponse (json object) will be passed as a response to request with following properties :-         
 
 
 
@@ -887,7 +887,32 @@ Are you looking for platform-native Sdks to integrate into your app. All you nee
 | message | Description whether user successfully registered or not. One of the following :REGISTERED, INVALID_EMAILID, INVALID_APPLICATIONID, PASSWORD_REQUIRED, UPDATED |
 | deviceKeyString | User device key  |
 | suUserKeyString  | User key  |
-| LastSyncTime  | Time in miliseconds when user device last synced with server  |
+| LastSyncTime  | Time in miliseconds when user device last synced with server  |          
+
+
+
+***Note** :- If registration process failed then only message property come in json response with description
+
+Create Account Response Example:
+
+{"deviceKeyString":"ahBzfm1vYmktY29tLWFscGhhciYLEgZTdVVzZXIYgICAgNXOoQgMCxIGRGV2aWNlGICAgICAgIAKDA",
+"lastSyncTime":"1437221081897","message":"UPDATED","suUserKeyString":
+"ahBzfm1vYmktY29tLWFscGhhchMLEgZTdVVzZXIYgICAgNXOoQgM"}          
+
+
+
+
+***Authentication***    
+-------
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1214,10 +1214,8 @@ After your app login validation, copy the following code to create applozic user
    `        ALMessageClientService *messageClientService = [[ALMessageClientService alloc] init]; `
    `         [messageClientService addWelcomeMessage]; `
    `     } `
-        
    `     NSLog(@"Registration response from server:%@", rResponse); `
-
-    ` }]; `
+` }]; `
    
    
    

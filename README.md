@@ -952,9 +952,9 @@ Authorization Code: Basic YWJjOmFoQnpmbTF2WW1rdFkyOXRMV0ZzY0doaGNpWUxFZ1pUZFZWel
 
 
 
-| Authorization: Authorization Code |
-| UserId-Enabled:true |
-| Application-Key:  "Your Application Key" |
+Authorization: Authorization Code |      
+UserId-Enabled:true |     
+Application-Key:  "Your Application Key" |
 
 
 

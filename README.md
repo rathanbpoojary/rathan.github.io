@@ -972,11 +972,11 @@ Authorization Code: Basic YWJjOmFoQnpmbTF2WW1rdFkyOXRMV0ZzY0doaGNpWUxFZ1pUZFZWel
 
 | Parameter  | Required | Default  | Description |
 | ------------- | ------------- | ------------- | ------------- |
-| to  | Yes  | First Header  | User id to which you want to send message |
-| deviceKeyString  | Yes  | First Header  | User unique device key |
-| message  | Yes  | First Header  | Text Message |
-| type  | Yes  | First Header  | Message type |
-| sendToDevice  |   | First Header  |  |
+| to  | Yes  |   | User id to which you want to send message |
+| deviceKeyString  | Yes  |   | User unique device key |
+| message  | Yes  |   | Text Message |
+| type  | Yes  |   | Message type |
+| sendToDevice  |   |   |  |
 
 
 

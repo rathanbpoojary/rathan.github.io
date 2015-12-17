@@ -1017,7 +1017,37 @@ In order to provide consistent service to all the users, there is a limitation o
 | endTime  | No  |   | End Time upto when you want to fetch message list. It is number of milliseconds since January 1, 1970, 00:00:00 GMT.  | 
 | startIndex  | Yes  | 0  | Starting Index to fetch messages from list.  | 
 | pageSize  | Yes  | 200  | Number of messages per page you want to fetch.  | 
-| smsType  | No  |   | One of the following : INBOX, OUTBOX, DRAFT, OUTBOX_SENT_FROM_DEVICE, MT_INBOX, MT_OUTBOX.  | 
+| smsType  | No  |   | One of the following : INBOX, OUTBOX, DRAFT, OUTBOX_SENT_FROM_DEVICE, MT_INBOX, MT_OUTBOX.  |         
+
+
+
+**Note**: For fetching the next page of your message list startIndex value should be equal to the sum of pageSize value of all the previous calls.
+
+
+**Response**:         
+
+
+
+
+** text **        
+` {"message":[{"keyString":"agpzfmFwcGxvemljchALEgNTbXMYgICAgK_huQsM","deviceKeyString": `
+` "agpzfmFwcGxvemljciYLEgZTdVVzZXIYgICAgK_hmQoMCxIGRGV2aWNlGICAgICAgIAKDA", `
+` "suUserKeyString":"agpzfmFwcGxvemljchMLEgZTdVVzZXIYgICAgK_hmQoM","to":"123", `
+` "message":"Hi, how r u??","sent":false,"sendToDevice":true,"shared":false,"createdAtTime":1437565530994, `
+` "type":5,"source":1,"contactIds":"9738150...","storeOnDevice":true,"fileMetaKeyStrings":[],"read":true},{"keyString":"agpzfmFwcGxve mljchALEgNTbXMYgICAgPiJrAsM","deviceKeyString": `
+` "agpzfmFwcGxvemljciYLEgZTdVVzZXIYgICAgK_  `
+` hmQoMCxIGRGV2aWNlGICAgICAgIAKDA","suUserKeyString": `
+` "agpzfmFwcGxvemljchMLEgZTdVVzZXIYgICAgK_hmQoM", `
+` "to":"123","message":"i m fine! what about u?","sent":false,"sendToDevice":true,"shared":false,"createdAtTime":1437565473333, `
+` "type":5,"source":1,"contactIds":"9738150..","storeOnDevice":true,"fileMetaKeyStrings":[],"read":true}]} `     
+
+
+
+| Response  | Description | 
+| ------------- | ------------- | 
+| error  | In case of any exception contact devashish@applozic.com  |
+| null  | This will come if message list is empty  |
+| UnAuthorized Access  | This will come if the emailId and apiKey doesn't match or your API Pack got expired.  |
 
 
 

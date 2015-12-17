@@ -1177,7 +1177,7 @@ ii ) Go to Build Phase. Expand  Embedded frameworks and add applozic framework.
 
 
 
-![dashboard-blank-content](http://localhost:9090/applozic/resources/images/dashboard-content.png)        
+![dashboard-blank-content](http://localhost:9090/applozic/resources/images/adding-applozic-framework.png)        
 
 
 

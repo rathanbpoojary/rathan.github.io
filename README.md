@@ -932,7 +932,7 @@ Get token to make api calls-
 Sample json-       
 
 
-** test **
+** test **               
 ` {"token":"AHRlWrqPBtxeFHrSi9n5QidJKllzpyMAOMVkLj",                 "emailId":"abc@xyz.com","userId":"abc","deviceKeyString":"ahBzfm1vYmktY29tLWFscGhhciYLEgZTdVVzZX,     `      
 ` "timeZoneOffset":"19800000"} `       
 
@@ -1216,7 +1216,48 @@ After your app login validation, copy the following code to create applozic user
    `         [messageClientService addWelcomeMessage]; `
    `     } `
    `     NSLog(@"Registration response from server:%@", rResponse); `
-` }]; `
+` }]; `        
+
+
+
+
+**PUSH NOTIFICATION REGISTRATION AND HANDLING **
+
+**a ) Send device token to applozic server:**
+
+In your AppDelegate’s **didRegisterForRemoteNotificationsWithDeviceToken **method  send device registration to applozic server after you get deviceToken from APNS. Sample code is as below:             
+
+
+
+
+** Objective-C **      
+` - (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken `
+` { `
+  
+   ` const unsigned *tokenBytes = [deviceToken bytes]; `
+   `  NSString *hexToken = [NSString stringWithFormat:@"%08x%08x%08x%08x%08x%08x%08x%08x", `
+  `                        ntohl(tokenBytes[0]), ntohl(tokenBytes[1]), ntohl(tokenBytes[2]),`
+   `                       ntohl(tokenBytes[3]), ntohl(tokenBytes[4]), ntohl(tokenBytes[5]),`
+   `                       ntohl(tokenBytes[6]), ntohl(tokenBytes[7])]; `
+    
+   `  NSString *apnDeviceToken = hexToken;  `
+   `  NSLog(@"apnDeviceToken: %@", hexToken); `
+ 
+ ` //TO AVOID Multiple call to server check if previous apns token is same as recent one, if different call app lozic server.   `      
+
+   ` if (![[ALUserDefaultsHandler getApnDeviceToken] isEqualToString:apnDeviceToken]) `
+  `  { `
+   `     ALRegisterUserClientService *registerUserClientService = [[ALRegisterUserClientService alloc] init]; `
+   `     [registerUserClientService updateApnDeviceTokenWithCompletion:apnDeviceToken withCompletion:^(ALRegistrationResponse `  ` *rResponse, NSError *error) { `
+  `          if (error) { `
+  `              NSLog(@"%@",error); `
+ `               return ; `
+  `          } `
+ `           NSLog(@"Registration response from server:%@", rResponse); `
+  `  }]; `
+  `  } `
+` } `
+
    
    
    

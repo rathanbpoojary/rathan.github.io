@@ -1077,9 +1077,24 @@ In order to provide consistent service to all the users, there is a limitation o
 | ------------- | ------------- | 
 | success  | Request is successfully processedl  |
 | error  |This will come if any exception occurs on server or all the parameters are null. In case of any exception contact devashish@applozic.com  |
-| UnAuthorized Access  | This will come if the emailId and apiKey doesn't match or your API Pack got expired.  |
+| UnAuthorized Access  | This will come if the emailId and apiKey doesn't match or your API Pack got expired.  |        
 
 
+
+****Delete Conversation Thread ****           
+
+
+
+**DELETE CONVERSATION THREAD URL**: https://apps.applozic.com/rest/ws/mobicomkit/v1/message/delete/conversation.task?contactNumber=userId
+**Method Type**: GET 
+
+**Parameters**:          
+
+
+
+| Parameter  | Response | Default  | Description |
+| ------------- | ------------- | ------------- | ------------- |
+| userId  | Yes  |   | User for which you want to delete thread  |
 
 
 

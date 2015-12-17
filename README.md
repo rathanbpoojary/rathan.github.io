@@ -855,10 +855,11 @@ Are you looking for platform-native Sdks to integrate into your app. All you nee
 
 
 
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |     
+| Parameter  | Required | Default | Description |
+| ------------- | ------------- | | ------------- | | ------------- | 
+| Content Cell  | Content Cell  | | Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  | | Content Cell  | Content Cell  |    
+| Content Cell  | Content Cell  | | Content Cell  | Content Cell  |
 
 
 

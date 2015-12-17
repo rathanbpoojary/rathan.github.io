@@ -976,7 +976,7 @@ Authorization Code: Basic YWJjOmFoQnpmbTF2WW1rdFkyOXRMV0ZzY0doaGNpWUxFZ1pUZFZWel
 | deviceKeyString  | Yes  |   | User unique device key |
 | message  | Yes  |   | Text Message |
 | type  | Yes  |   | Message type |
-| sendToDevice  |   |   |  |
+| sendToDevice  |      |      |     | 
 
 
 

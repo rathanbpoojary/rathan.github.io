@@ -976,7 +976,20 @@ Authorization Code: Basic YWJjOmFoQnpmbTF2WW1rdFkyOXRMV0ZzY0doaGNpWUxFZ1pUZFZWel
 | deviceKeyString  | Yes  |   | User unique device key |
 | message  | Yes  |   | Text Message |
 | type  | Yes  |   | Message type |
-| sendToDevice  |      |      |     | 
+| sendToDevice  |      |      |     |       
+
+
+**Response**:-       
+
+
+
+| Response  | Description |
+| ------------- | ------------- |
+| message key  | Request is successfully processed  |
+| error  | In case of any exception contact devashish@applozic.com  |
+| Content Cell  | This will come if the emailId and apiKey doesn't match or your API Pack got expired.  |
+| Content Cell  | This will come if the 600 API calls per day is crossed  |
+| Content Cell  | This will come if more than 50 numbers are added in a single API call  |
 
 
 

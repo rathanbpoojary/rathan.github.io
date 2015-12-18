@@ -27,9 +27,11 @@ Add Applozic messaging plugin into your web application :
 
 Step 1: Register at **https://www.applozic.com/** to get the application key.
 
-Step 2: For the standard user interface, add the following Applozic messaging plugin script file before **`</head>`** into your web page:      
+Step 2: For the standard user interface, add the following Applozic messaging plugin script file before **`</head>`** into your web page:               
 
-** text **     
+
+
+
 ` <script type="text/javascript" >(function(d, m){var s, h; s = document.createElement("script");s.type = "text/javascript";s.async=true;s.src="https://apps.applozic.com/sidebox.app";h=document.getElementsByTagName('head')[0];h.appendChild(s);window.applozic=m;m.init=function(t){m._globals=t;}})(document, window.applozic || {});</script> `  
  
  
@@ -40,7 +42,7 @@ Step 2: For the standard user interface, add the following Applozic messaging pl
  
  
  
-** text **    
+ 
 ` <script type="text/javascript" >window.applozic.init({userId: 'user id', appId: 'application key', contactDisplayName: displayName, contactDisplayImage: contactImageSrc, desktopNotification: true});</script> `    
 
 
@@ -50,15 +52,14 @@ Step 4: Replace the following parameters in script:
 
 
 
-** text **      
-` userId: 'User Unique id',                 // required
-appId: 'Your application key'             // required
-contactDisplayName: 'Callback function to return contact name by userId',
-       // function should receive one parameter i.e userId. Example given in Step 6 (optional)
-contactDisplayImage: 'Callback function to return image src of contact by  userId',
-      // function should receive one parameter i.e userId'. Example given in Step 7 (optional)
-desktopNotification: true or false,
-      // only for chrome browser enable or disable desktop notifications for incoming messages (optional) `    
+` userId: 'User Unique id',                 // required `
+` appId: 'Your application key'              // required `
+` contactDisplayName: 'Callback function to return contact name by userId', `
+`       // function should receive one parameter i.e userId. Example given in Step 6 (optional) `
+`contactDisplayImage: 'Callback function to return image src of contact by  userId', `
+`     // function should receive one parameter i.e userId'. Example given in Step 7 (optional) `
+` desktopNotification: true or false, `
+`      // only for chrome browser enable or disable desktop notifications for incoming messages (optional) `    
 
 
 
@@ -71,7 +72,7 @@ You can bind auto suggest plugin on input search field with id given below:
 
 
 
-** text **      
+
 ` mck-search `     
 
 
@@ -80,7 +81,7 @@ Contacts Json format is given below as a reference used in **displayName()** and
 
 
 
-** text **    
+
 ` var contacts = {"user1": {"userId": "user1", "displayName": "Devashish", "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, "user2": {"userId": "user2", "displayName": "Adarsh", "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, "user3": {"userId": "user3", "displayName": "Shanki", "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}}; `    
 
 
@@ -93,13 +94,13 @@ Example:
 
 
 
-** text **    
-` function displayName(userId) {
-   var contact = contacts[userId];  // used contacts variable as given above.
-   if (typeof contact !== 'undefined') {
-       return contact.displayName;
-   }
-} `    
+   
+` function displayName(userId) { `
+ `  var contact = contacts[userId];  // used contacts variable as given above. `
+`   if (typeof contact !== 'undefined') { `
+`       return contact.displayName; `
+`   } `
+` } `    
 
 
 
@@ -111,13 +112,13 @@ Example:
 
 
 
-** text **     
-` function contactImageSrc(userId) {
-    var contact = contacts[userId];   // used contacts variable as given above.
-    if (typeof contact !== 'undefined') {
-         return contact.photoLink;
-    }
- } `     
+
+` function contactImageSrc(userId) { `
+`    var contact = contacts[userId];   // used contacts variable as given above. `
+`    if (typeof contact !== 'undefined') { `
+`         return contact.photoLink; `
+`    } `
+` } `     
  
  
  
@@ -128,7 +129,7 @@ You can call below function to load contact list by passing contacts json as giv
 
 
 
-** text **    
+
 ` var contacts = {"contacts": [{"userId": "user1", "displayName": "Devashish", "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, {"userId": "user2", "displayName": "Adarsh", "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, {"userId": "user3", "displayName": "Shanki", "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}]}; `
 
 ` $applozic.fn.applozic('loadContacts', 'put-contacts-json-here'); // contacts json format given above `    
@@ -141,7 +142,6 @@ You can call below function to directly open any contact tab dynamically :
 
 
 
-** text **      
 ` $applozic.fn.applozic('loadTab', 'put-userId-here'); `     
 
 
@@ -179,14 +179,14 @@ Step 3: Initialize plugin using script given below also given in message.html (I
 
 
 
-** text **    
-` $applozic.fn.applozic({userId: 'customer-1', appId: 'applozic-sample-app',
-      ojq: $original,
-      readConversation: readMessage,
-      contactDisplayName: displayName, 
-      contactDisplayImage: contactImageSrc, 
-      desktopNotification: true
-}); `     
+
+` $applozic.fn.applozic({userId: 'customer-1', appId: 'applozic-sample-app', `
+`      ojq: $original, `
+`      readConversation: readMessage, `
+`      contactDisplayName: displayName, `
+`      contactDisplayImage: contactImageSrc,  `
+`      desktopNotification: true `
+` }); `     
 
 
 
@@ -194,13 +194,13 @@ Step 4: Change the following parameters in above script :
 
 
 
-** text **      
+ 
 ` userId: 'User Unique id',                 // required `
 ` appId: 'Your application key',             // required `
 ` contactDisplayName: 'Callback function to return contact name by userId', `
-      ` // function should receive one parameter i.e userId. Example given in Step:7 (optional) `
+  ` // function should receive one parameter i.e userId. Example given in Step:7 (optional) `
 ` contactDisplayImage: 'Callback function to return image src of contact by userId', `
-      ` // function should receive one parameter i.e userId. Example given in Step:8 (optional) `
+ ` // function should receive one parameter i.e userId. Example given in Step:8 (optional) `
 ` desktopNotification: true or false `
 `       // for chrome browser enable or disable desktop notifications for incoming messages (optional) `     
 
@@ -214,7 +214,7 @@ You can modify **mck-sidebox-1.0.css** class located at :
 
 
 
-** text **     
+ 
 `  https://github.com/AppLozic/Applozic-Web-Plugin/blob/master/message/advanced/css/app/mck-sidebox-1.0.css `    
 
 Step 6: To add auto suggest users list in search field (optional)
@@ -222,13 +222,13 @@ Step 6: To add auto suggest users list in search field (optional)
 You can bind auto suggest plugin on input search field with id given below:    
 
 
-** text **     
+
 ` mck-search `     
 
 Contacts Json format is given below as a reference used in **displayName()** and **contactImageSrc()** :     
 
 
-** text **      
+ 
 ` var contacts = {"user1": {"userId": "user1", "displayName": "Devashish", "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, "user2": {"userId": "user2", "displayName": "Adarsh", "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, "user3": {"userId": "user3", "displayName": "Shanki", "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}}; `      
 
 
@@ -240,7 +240,7 @@ You  can write javascript function which return display name on basis of userId
 Example:         
 
 
-** text **     
+
 ` function displayName(userId) { `
   `  var contact = contacts[userId];  // used contacts variable as given above.`
    ` if (typeof contact !== 'undefined') { `
@@ -256,7 +256,7 @@ You  can write javascript function to return user image url on basis of userId
 Example:      
 
 
-** text **      
+
 ` function contactImageSrc(userId) { `
   `   var contact = contacts[userId];   // used contacts variable as given above. `
   `   if (typeof contact !== 'undefined') { `
@@ -272,7 +272,7 @@ You can call below function to load contact list by passing contacts json as giv
 
 
 
-** text **      
+
 ` var contacts = {"contacts": [{"userId": "user1", "displayName": "Devashish", "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, {"userId": "user2", "displayName": "Adarsh", "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, {"userId": "user3", "displayName": "Shanki", "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}]}; `
  
 ` $applozic.fn.applozic('loadContacts', 'put-contacts-json-here); // contacts json format given above `       
@@ -283,7 +283,7 @@ Step 10: Function to load tab dynamically (optional)
 You can call below function to directly open any contact tab dynamically :       
 
 
-**text **      
+
 ` $applozic.fn.applozic('loadTab', 'put-userId-here'); `         
 
 
@@ -554,7 +554,7 @@ SenderId is a unique numerical value created when you configure your API project
 
 
 
-** text **         
+
 ` GCMRegistrationUtils gcmRegistrationUtils = new GCMRegistrationUtils(activity); `
 ` gcmRegistrationUtils.setUpGcmNotification(); `            
 
@@ -771,7 +771,7 @@ You can build your own contact in two easy steps by using AppContactService.java
 
 
 
-** text **      
+
 ` Contact contact = new Contact(); `
 ` contact.setUserId(<userId>); (Unique ID to identify contact ) `
 ` contact.setFullName(<full name of contact>); `
@@ -783,7 +783,7 @@ You can build your own contact in two easy steps by using AppContactService.java
 Example :        
 
 
-** text **      
+
 ` Contact contact = new Contact(); `
 ` contact.setUserId("adarshk"); `
 ` contact.setFullName("Adarsh"); `
@@ -799,7 +799,7 @@ Example :
 
 
 
-** text **     
+
 ` Context context = getApplicationContext(); `
 ` AppContactService appContactService = new AppContactService(context); `
 ` appContactService.add(contact); `        
@@ -1030,7 +1030,7 @@ In order to provide consistent service to all the users, there is a limitation o
 
 
 
-** text **        
+   
 ` {"message":[{"keyString":"agpzfmFwcGxvemljchALEgNTbXMYgICAgK_huQsM","deviceKeyString": `
 ` "agpzfmFwcGxvemljciYLEgZTdVVzZXIYgICAgK_hmQoMCxIGRGV2aWNlGICAgICAgIAKDA", `
 ` "suUserKeyString":"agpzfmFwcGxvemljchMLEgZTdVVzZXIYgICAgK_hmQoM","to":"123", `

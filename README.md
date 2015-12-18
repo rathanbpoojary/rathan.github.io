@@ -32,7 +32,7 @@ Step 2: For the standard user interface, add the following Applozic messaging pl
 
 
 
-``` <script type="text/javascript" > ```                    
+` <script type="text/javascript"> `                    
 `(function(d, m){var s, h; s = document.createElement("script");  `  
 `s.type = "text/javascript";   `
 `s.async=true;   `  
@@ -107,12 +107,15 @@ Example:
 
 
    
-` function displayName(userId) { `
- `  var contact = contacts[userId];  // used contacts variable as given above. `
-`   if (typeof contact !== 'undefined') { `
-`       return contact.displayName; `
-`   } `
-` } `    
+` function displayName(userId)      `  
+` { `    
+ `  var contact = contacts[userId];      `
+ `// used contacts variable as given above. `       
+` if (typeof contact !== 'undefined')      `
+`{ `      
+` return contact.displayName; `     
+`} `       
+` } `          
 
 
 
@@ -125,12 +128,14 @@ Example:
 
 
 
-` function contactImageSrc(userId) { `
-`    var contact = contacts[userId];   // used contacts variable as given above. `
-`    if (typeof contact !== 'undefined') { `
-`         return contact.photoLink; `
-`    } `
-` } `     
+` function contactImageSrc(userId)       `
+`{ `       
+`    var contact = contacts[userId];   // used contacts variable as given above. `       
+`    if (typeof contact !== 'undefined')        `
+{ `       
+` return contact.photoLink; `          
+`    } `        
+` } `             
  
  
  
@@ -142,9 +147,9 @@ You can call below function to load contact list by passing contacts json as giv
 
 
 
-` var contacts = {"contacts": [{"userId": "user1", "displayName": "Devashish", "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, {"userId": "user2", "displayName": "Adarsh", "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, {"userId": "user3", "displayName": "Shanki", "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}]}; `
+` var contacts = {"contacts": [{"userId": "user1", "displayName": "Devashish", "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, {"userId": "user2", "displayName": "Adarsh", "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, {"userId": "user3", "displayName": "Shanki", "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}]}; `      
 
-` $applozic.fn.applozic('loadContacts', 'put-contacts-json-here'); // contacts json format given above `    
+` $applozic.fn.applozic('loadContacts', 'put-contacts-json-here'); // contacts json format given above `         
 
 
 
@@ -192,12 +197,12 @@ Step 3: Initialize plugin using script given below also given in message.html (I
 
 
 
-` $applozic.fn.applozic({userId: 'customer-1', appId: 'applozic-sample-app', `
-`      ojq: $original, `
-`      readConversation: readMessage, `
-`      contactDisplayName: displayName, `
-`      contactDisplayImage: contactImageSrc,  `
-`      desktopNotification: true `
+` $applozic.fn.applozic({userId: 'customer-1', appId: 'applozic-sample-app', `        
+` ojq: $original, `       
+` readConversation: readMessage, `         
+`contactDisplayName: displayName, `      
+`contactDisplayImage: contactImageSrc,  `        
+`desktopNotification: true `         
 ` }); `     
 
 
@@ -207,14 +212,14 @@ Step 4: Change the following parameters in above script :
 
 
  
-` userId: 'User Unique id',                 // required `
-` appId: 'Your application key',             // required `
-` contactDisplayName: 'Callback function to return contact name by userId', `
-  ` // function should receive one parameter i.e userId. Example given in Step:7 (optional) `
-` contactDisplayImage: 'Callback function to return image src of contact by userId', `
- ` // function should receive one parameter i.e userId. Example given in Step:8 (optional) `
-` desktopNotification: true or false `
-`       // for chrome browser enable or disable desktop notifications for incoming messages (optional) `     
+` userId: 'User Unique id',                 // required `          
+` appId: 'Your application key',             // required `        
+` contactDisplayName: 'Callback function to return contact name by userId', `      
+  ` // function should receive one parameter i.e userId. Example given in Step:7 (optional) `         
+` contactDisplayImage: 'Callback function to return image src of contact by userId', `       
+ ` // function should receive one parameter i.e userId. Example given in Step:8 (optional) `       
+` desktopNotification: true or false `        
+` // for chrome browser enable or disable desktop notifications for incoming messages (optional) `              
 
 
 
@@ -253,12 +258,14 @@ Example:
 
 
 
-` function displayName(userId) { `
-  `  var contact = contacts[userId];  // used contacts variable as given above.`
-   ` if (typeof contact !== 'undefined') { `
-`         return contact.displayName; `
-   ` } `
-`} `     
+` function displayName(userId) `       
+` { `        
+`var contact = contacts[userId];  // used contacts variable as given above.`        
+   ` if (typeof contact !== 'undefined')`    
+   `{ `        
+` return contact.displayName; `       
+   ` } `       
+`} `          
 
 
 Step 8: Callback function to get contact image url  from userId (optional)
@@ -269,12 +276,14 @@ Example:
 
 
 
-` function contactImageSrc(userId) { `
-  `   var contact = contacts[userId];   // used contacts variable as given above. `
-  `   if (typeof contact !== 'undefined') { `
-  `       return contact.photoLink; `
-  `   } `
-` } `      
+` function contactImageSrc(userId) `       
+`{ `      
+  `   var contact = contacts[userId];   // used contacts variable as given above. `       
+  `   if (typeof contact !== 'undefined') `     
+  `{ `       
+  ` return contact.photoLink; `      
+  ` } `       
+` } `         
 
 
 
@@ -336,13 +345,14 @@ To integrate messaging into your android app, register at [Applozic](https://www
 Add the following in gradle android target:      
 
 ** java **        
-` packagingOptions { `
-`    exclude 'META-INF/DEPENDENCIES' `
-`      exclude 'META-INF/NOTICE' `
-`     exclude 'META-INF/LICENSE' `
-`      exclude 'META-INF/LICENSE.txt' `
-`     exclude 'META-INF/NOTICE.txt'  `
-` } `     
+` packagingOptions`      
+`{ `          
+`exclude 'META-INF/DEPENDENCIES' `     
+`exclude 'META-INF/NOTICE' `        
+` exclude 'META-INF/LICENSE' `      
+` exclude 'META-INF/LICENSE.txt' `   
+`exclude 'META-INF/NOTICE.txt'  `       
+` } `               
 
 
 **Step 2: Addition of Permissions, Services and Receivers in androidmanifest.xml**:
@@ -351,27 +361,28 @@ Applozic Application Key:
 
 
 ** java **     
-` <meta-data `
-   `           android:name="com.applozic.application.key" `
-   `           android:value="YOUR_APPLOZIC_APPLICATION_KEY" /> `       
+` <meta-data `              
+   `android:name="com.applozic.application.key" `               
+   `android:value="YOUR_APPLOZIC_APPLICATION_KEY" /> `                       
    
 Applozic Application URL:        
    
    ** java **     
-   ` <meta-data `
-   `        android:name="com.applozic.server.url" `
-    `       android:value="https://apps.applozic.com" /> `      
+   ` <meta-data `       
+   ` android:name="com.applozic.server.url" `       
+    `android:value="https://apps.applozic.com" /> `               
     
     
  Applozic Notification package name and launcher icon:        
  
  ** java **       
-` <meta-data  `                               
-  `        android:name="com.applozic.mobicomkit.notification.icon" `
-   `       android:resource="YOUR_LAUNCHER_ICON" /> `
-` <meta-data `
-   `       android:name="com.package.name" `
-   `       android:value="${applicationId}" /> `           
+` <meta-data  `                                       
+  `android:name="com.applozic.mobicomkit.notification.icon" `           
+   `android:resource="YOUR_LAUNCHER_ICON" /> `      
+   
+` <meta-data `          
+   `android:name="com.package.name" `           
+   `android:value="${applicationId}" /> `                           
    
    
    **Note**: If you are **not using gradle build** you need to replace ${applicationId}  with your Android app package name
@@ -381,9 +392,9 @@ Attachment Folder configuration:
 
 
 ** java **      
-`<meta-data `
-  `          android:name="main_folder_name" `
-  `          android:value="@string/default_media_location_folder" /> `        
+`<meta-data `           
+  ` android:name="main_folder_name" `           
+  `  android:value="@string/default_media_location_folder" /> `                        
   
   
   
@@ -405,24 +416,24 @@ Permissions:
 
 
 ** java **      
-` <uses-permission android:name="<APP_PKG_NAME>.permission.C2D_MESSAGE" /> `
-` <permission `
-  `           android:name="<APP_PKG_NAME>.permission.C2D_MESSAGE" `
-   `          android:protectionLevel="signature" /> `
-` <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" /> `
+` <uses-permission android:name="<APP_PKG_NAME>.permission.C2D_MESSAGE" /> `            
+` <permission `             
+  ` android:name="<APP_PKG_NAME>.permission.C2D_MESSAGE" `          
+   `android:protectionLevel="signature" /> `            
+` <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" /> `               
   
-` <uses-permission android:name="android.permission.INTERNET" /> `
-` <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"  /> `
-` <uses-permission android:name="android.permission.READ_CONTACTS" /> `
-` <uses-permission android:name="android.permission.WRITE_CONTACTS" /> `
-` <uses-permission android:name="android.permission.VIBRATE"/> `
-` <uses-permission android:name="android.permission.CALL_PHONE"/> `
-` <uses-permission android:name="android.permission.READ_PROFILE"" /> `
-` <uses-permission android:name="android.permission.READ_PHONE_STATE"/> `
-` <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> `
-` <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> `
-` <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> `
-` <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/> `        
+` <uses-permission android:name="android.permission.INTERNET" /> `                  
+` <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"  /> `               
+` <uses-permission android:name="android.permission.READ_CONTACTS" /> `         
+` <uses-permission android:name="android.permission.WRITE_CONTACTS" /> `            
+` <uses-permission android:name="android.permission.VIBRATE"/> `            
+` <uses-permission android:name="android.permission.CALL_PHONE"/> `             
+` <uses-permission android:name="android.permission.READ_PROFILE"" /> `             
+` <uses-permission android:name="android.permission.READ_PHONE_STATE"/> `               
+` <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> `                
+` <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> `              
+` <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> `              
+` <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/> `                     
 
 
 
@@ -430,12 +441,12 @@ Broadcast Registration For PushNotification:
 
 
 ** java **    
-` <receiver `
-     `  android:name="com.applozic.mobicomkit.uiwidgets.notification.MTNotificationBroadcastReceiver"> `
-     ` <intent-filter> `
-     `      <action android:name="${applicationId}.send.notification"/> `
-     ` </intent-filter> `
-` </receiver> `        
+` <receiver `           
+`  android:name="com.applozic.mobicomkit.uiwidgets.notification.MTNotificationBroadcastReceiver"> `             
+` <intent-filter> `         
+`      <action android:name="${applicationId}.send.notification"/> `            
+ ` </intent-filter> `           
+` </receiver> `                 
 
 
 **Note**: If you are **not using gradle build** you need to replace ${applicationId}  with your Android app package name
@@ -448,75 +459,82 @@ Paste the following in your androidmanifest.xml:
 
 
 ** java **      
-` <activity android:name="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity" `
-  `  android:configChanges="keyboardHidden|orientation|screenSize" `
-  `  android:label="@string/app_name" `
-  `  android:parentActivityName="<APP_PARENT_ACTIVITY>" `
-  `  android:theme="@style/MobiComAppBaseTheme"> `
-   ` <!-- Parent activity meta-data to support API level 7+ --> `
-    `    <meta-data `
-`                 android:name="android.support.PARENT_ACTIVITY" `
- `                android:value="<APP_PARENT_ACTIVITY>" /> `
-  `</activity> `
-                   
-`<activity `
- `           android:name="com.applozic.mobicomkit.uiwidgets.people.activity.MobiComKitPeopleActivity" `
- `           android:configChanges="keyboardHidden|orientation|screenSize" `
- `           android:label="@string/activity_contacts_list" `
- `           android:parentActivityName="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity" `
- `           android:theme="@style/ContactTheme" `
- `           android:windowSoftInputMode="adjustResize"> `
- `           <!-- Parent activity meta-data to support API level 7+ --> `
- `           <meta-data `
- `               android:name="android.support.PARENT_ACTIVITY" `
- `               android:value="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity" /> `
+` <activity android:name="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity" `                           
+  `  android:configChanges="keyboardHidden|orientation|screenSize" `                         
+  `  android:label="@string/app_name" `                   
+  `  android:parentActivityName="<APP_PARENT_ACTIVITY>" `                        
+  `  android:theme="@style/MobiComAppBaseTheme"> `                        
+   ` <!-- Parent activity meta-data to support API level 7+ --> `                             
+    ` <meta-data `                      
+` android:name="android.support.PARENT_ACTIVITY" `                           
+ ` android:value="<APP_PARENT_ACTIVITY>" /> `                                  
+  `</activity> `                                               
 
-`            <intent-filter> `
-`               <action android:name="android.intent.action.SEARCH" /> `
-`            </intent-filter>`
-`
-`           <meta-data `
-`                android:name="android.app.searchable" `
-`                android:resource="@xml/searchable_contacts" /> `
-`</activity> `
 
-`<activity `
-`           android:name="com.applozic.mobicomkit.uiwidgets.conversation.activity.FullScreenImageActivity" `
-`            android:configChanges="keyboardHidden|orientation|screenSize" `
-`            android:label="Image" `
-`            android:parentActivityName="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity" `
-`            android:theme="@style/MobiComAppBaseTheme"> `
-`            <!-- Parent activity meta-data to support API level 7+ --> `
-`            <meta-data `
-`                android:name="android.support.PARENT_ACTIVITY" `
-`                android:value="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity" /> `
-`</activity> `
-                   
-`<service `
-`            android:name="com.applozic.mobicomkit.api.conversation.MessageIntentService" `
-`            android:exported="false" /> `
 
-`        <receiver android:name="com.applozic.mobicomkit.broadcast.NotificationBroadcastReceiver"> `
-`            <intent-filter> `
-`                <action android:name="applozic.LAUNCH_APP" /> `
-`            </intent-filter> `
-`            <meta-data `
-`                android:name="activity.open.on.notification" `
-`                android:value="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity" /> `
-`        </receiver> `
+`<activity `                                                 
+ `android:name="com.applozic.mobicomkit.uiwidgets.people.activity.MobiComKitPeopleActivity" `               
+ `android:configChanges="keyboardHidden|orientation|screenSize" `               
+ `android:label="@string/activity_contacts_list" `              
+ `android:parentActivityName="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity" `               
+ `android:theme="@style/ContactTheme" `             
+ `android:windowSoftInputMode="adjustResize"> `             
+ `<!-- Parent activity meta-data to support API level 7+ --> `              
+ `<meta-data `              
+ `android:name="android.support.PARENT_ACTIVITY" `              
+ `android:value="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity" /> `             
 
-`       <receiver android:name="com.applozic.mobicomkit.broadcast.TimeChangeBroadcastReceiver"> `
-`            <intent-filter> `
-`                <action android:name="android.intent.action.TIME_SET" /> `
-`                <action android:name="android.intent.action.TIMEZONE_CHANGED" /> `
-`            </intent-filter> `
-`        </receiver> `
+`<intent-filter> `              
+`<action android:name="android.intent.action.SEARCH" /> `               
+`</intent-filter>`              
 
-`         <receiver android:name="com.applozic.mobicomkit.broadcast.ConnectivityReceiver"> `
-`            <intent-filter> `
-`                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" /> `
-`            </intent-filter> `
-`        </receiver> `           
+
+`<meta-data `               
+`android:name="android.app.searchable" `            
+`android:resource="@xml/searchable_contacts" /> `       
+`</activity> `          
+
+`<activity `            
+`android:name="com.applozic.mobicomkit.uiwidgets.conversation.activity.FullScreenImageActivity" `       
+`android:configChanges="keyboardHidden|orientation|screenSize" `            
+`android:label="Image" `            
+`android:parentActivityName="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity" `            
+`android:theme="@style/MobiComAppBaseTheme"> `              
+`<!-- Parent activity meta-data to support API level 7+ --> `           
+`<meta-data `           
+`android:name="android.support.PARENT_ACTIVITY" `           
+`android:value="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity" /> `              
+`</activity> `              
+ 
+`<service `             
+`android:name="com.applozic.mobicomkit.api.conversation.MessageIntentService" `     
+`android:exported="false" /> `          
+
+`<receiver android:name="com.applozic.mobicomkit.broadcast.NotificationBroadcastReceiver"> `                
+`<intent-filter> `          
+`<action android:name="applozic.LAUNCH_APP" /> `            
+`</intent-filter> `         
+
+
+`<meta-data `       
+`android:name="activity.open.on.notification" `         
+`android:value="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity" /> `          
+`</receiver> `          
+
+
+`<receiver android:name="com.applozic.mobicomkit.broadcast.TimeChangeBroadcastReceiver"> `          
+`<intent-filter> `          
+`<action android:name="android.intent.action.TIME_SET" /> `         
+`<action android:name="android.intent.action.TIMEZONE_CHANGED" /> `         
+`</intent-filter> `         
+`</receiver> `              
+
+
+`<receiver android:name="com.applozic.mobicomkit.broadcast.ConnectivityReceiver"> `         
+`<intent-filter> `          
+`<action android:name="android.net.conn.CONNECTIVITY_CHANGE" /> `           
+`</intent-filter> `         
+`</receiver> `                  
 
 
 
@@ -531,25 +549,25 @@ Replace APP_PARENT_ACTIVITY with your app's parent activity.
 
 
 ** java **        
-` UserLoginTask.TaskListener listener = new UserLoginTask.TaskListener() {  `
+` UserLoginTask.TaskListener listener = new UserLoginTask.TaskListener()`           
+`{  `           
 
-`   @Override `
-`   public void onSuccess(RegistrationResponse registrationResponse, Context context) { `
-     
-            
-`  } `
+` @Override `           
+`public void onSuccess(RegistrationResponse registrationResponse, Context context)`         
+{ `     
+`} `            
 
-`   @Override `
-`   public void onFailure(RegistrationResponse registrationResponse, Exception exception) { `
-                  
-`   } `
-` }; `
+`@Override `            
+`   public void onFailure(RegistrationResponse registrationResponse, Exception exception)`          
+`{ `        
+`} `            
+` }; `          
 
-` User user = new User(); `
-` user.setUserId(userId); `
-` user.setEmail(email); //optional `
+` User user = new User(); `         
+` user.setUserId(userId); `         
+` user.setEmail(email); //optional `            
 
-` new UserLoginTask(user, listener, this).execute((Void) null); `                   
+` new UserLoginTask(user, listener, this).execute((Void) null); `                              
 
 
 If it is a new user, new user account will get created else existing user will be logged in to the application.
@@ -567,26 +585,28 @@ SenderId is a unique numerical value created when you configure your API project
 
 
 
-` GCMRegistrationUtils gcmRegistrationUtils = new GCMRegistrationUtils(activity); `
-` gcmRegistrationUtils.setUpGcmNotification(); `            
+` GCMRegistrationUtils gcmRegistrationUtils = new GCMRegistrationUtils(activity); `         
+` gcmRegistrationUtils.setUpGcmNotification(); `                      
 
 
 If you already have a GCM code in your app, then copy the following code at the place where you are getting the GCM registration id.       
 ** java **     
-` PushNotificationTask pushNotificationTask = null `
-`       PushNotificationTask.TaskListener listener = new PushNotificationTask.TaskListener() { `
+` PushNotificationTask pushNotificationTask = null `        
+`PushNotificationTask.TaskListener listener = new PushNotificationTask.TaskListener()`      
+`{ `            
 
-`               @Override `
-`                public void onSuccess(RegistrationResponse registrationResponse) { `
-`                } `
+` @Override `           
+` public void onSuccess(RegistrationResponse registrationResponse)`             
+`{ `            
+` } `           
+`  @Override `          
+` public void onFailure(RegistrationResponse registrationResponse, Exception exception)`        
+`{ `            
+`} `        
+`}; `               
 
-`                @Override `
-`                public void onFailure(RegistrationResponse registrationResponse, Exception exception) { `
-`               } `
-`            }; `
-
-`            pushNotificationTask = new PushNotificationTask(pushnotificationId, listener, mActivity); `
-`            pushNotificationTask.execute((Void) null); `        
+`pushNotificationTask = new PushNotificationTask(pushnotificationId, listener, mActivity); `            
+`pushNotificationTask.execute((Void) null); `                   
 
 
 
@@ -599,28 +619,29 @@ Add the following in your GcmBroadcastReceiver's onReceive method.
 
 
 ** java **       
-` if(MobiComPushReceiver.isMobiComPushNotification(context, intent)) { `
- `           MobiComPushReceiver.processMessageAsync(context, intent); `
- `           return; `
-` } `       
+` if(MobiComPushReceiver.isMobiComPushNotification(context, intent))`       
+`{ `            
+ `MobiComPushReceiver.processMessageAsync(context, intent); `               
+ `return; `         
+` } `                     
 
 
 
 **Step 6: For starting the messaging activity**:        
 
 ** java **      
-`Intent intent = new Intent(this, ConversationActivity.class); `
- ` startActivity(intent); `        
+`Intent intent = new Intent(this, ConversationActivity.class); `            
+ ` startActivity(intent); `                                
  
  
  
  For starting individual conversation thread, set "userId" in intent:        
  
  ** java **           
- `Intent intent = new Intent(this, ConversationActivity.class); `
-` intent.putExtra("userId", "devashish@applozic.com"); `
-` intent.putExtra("displayName", "Devashish Mamgain"); //put it for displaying the title. `
-` startActivity(intent); `       
+ `Intent intent = new Intent(this, ConversationActivity.class); `           
+` intent.putExtra("userId", "devashish@applozic.com"); `            
+` intent.putExtra("displayName", "Devashish Mamgain"); //put it for displaying the title. `             
+` startActivity(intent); `                             
 
 
 
@@ -630,11 +651,11 @@ For easy insertion of Admin/Support Contact information, please changes followin
 
 
 ** java **          
-` <string name="support_contact_display_name">AppLozic Support</string> `
-` <string name="support_contact_userId">applozic</string> `
-` <string name="support_contact_emailId">devashish@applozic.com</string> `
-` <string name="support_contact_number">918042028425</string> `
-` <string name="support_contact_image_url">R.drawable.ic_launcher</string> `       
+` <string name="support_contact_display_name">AppLozic Support</string> `               
+` <string name="support_contact_userId">applozic</string> `             
+` <string name="support_contact_emailId">devashish@applozic.com</string> `              
+` <string name="support_contact_number">918042028425</string> `             
+` <string name="support_contact_image_url">R.drawable.ic_launcher</string> `                                 
 
 
 support_contact_image_url also supports url eg:
@@ -655,18 +676,19 @@ support_contact_image_url also supports url eg:
  
  
  ** java **     
-`  #keep json classes `
- `    -keepclassmembernames class * extends com.applozic.mobicomkit.api.JsonMarker { `
-`	!static !transient <fields>; ` 
- `    } `
-
-   `  #GSON Config `
-   `  -keepattributes Signature `
-   `  -keep class sun.misc.Unsafe { *; } `
-   `  -keep class com.google.gson.examples.android.model.** { *; } `
-   ` -keep class org.eclipse.paho.client.mqttv3.logging.JSR47Logger { `
-   `     *; `
-   ` } `           
+`#keep json classes `               
+ `-keepclassmembernames class * extends com.applozic.mobicomkit.api.JsonMarker `        
+ `{ `           
+`!static !transient <fields>; `                 
+ ` } `              
+`  #GSON Config `           
+   `  -keepattributes Signature `           
+   `  -keep class sun.misc.Unsafe { *; } `          
+   `  -keep class com.google.gson.examples.android.model.** { *; } `            
+   ` -keep class org.eclipse.paho.client.mqttv3.logging.JSR47Logger`        
+   `{ `                      
+   `*; `        
+   ` } `                       
    
    
    
@@ -730,9 +752,10 @@ Class: com.applozic.mobicomkit.api.conversation.MobiComConversationService
 
 
 **  java **      
-`  public void sendMessage(Message message) { `
-`  ... `
-`  } `     
+`  public void sendMessage(Message message)`        
+`{ `            
+`  ... `        
+`} `               
 
 
 Example: new MobiComConversationService(activity).sendMessage(new     
@@ -750,9 +773,10 @@ i) Get single latest message from each conversation
 
 
 ** java **      
-`public synchronized List<Message> getLatestMessagesGroupByPeople() { `
-` ... `
-`} `               
+`public synchronized List<Message> getLatestMessagesGroupByPeople() `       
+`{ `            
+` ... `         
+`} `                              
 
 
 
@@ -762,9 +786,10 @@ ii) Get messages of logged in user with another user by passing userId, startTim
 
 
 ** java **    
-` public List<Message> getMessages(String userId, Long startTime, Long endTime) { `
-`    ... `
-` }     `           
+` public List<Message> getMessages(String userId, Long startTime, Long endTime)`        
+`{ `            
+`    ... `          
+` } `                          
 
 
 
@@ -784,23 +809,24 @@ You can build your own contact in two easy steps by using AppContactService.java
 
 
 
-` Contact contact = new Contact(); `
-` contact.setUserId(<userId>); (Unique ID to identify contact ) `
-` contact.setFullName(<full name of contact>); `
-` contact.setEmailId(<EmailId>); `
-` contact.setImageURL(<image http URL OR android resource drawable  >); `
-` (in case of drawable use R.drawable.<resource_name>) `      
+` Contact contact = new Contact(); `            
+` contact.setUserId(<userId>); `            
+`(Unique ID to identify contact ) `                 
+` contact.setFullName(<full name of contact>); `                
+` contact.setEmailId(<EmailId>); `              
+` contact.setImageURL(<image http URL OR android resource drawable  >); `               
+` (in case of drawable use R.drawable.<resource_name>) `                         
 
 
 Example :        
 
 
 
-` Contact contact = new Contact(); `
-` contact.setUserId("adarshk"); `
-` contact.setFullName("Adarsh"); `
-` contact.setImageURL("R.drawable.applozic_ic_contact_picture_holo_light"); `
-` contact.setEmailId("applozic.connect@gmail.com"); `      
+` Contact contact = new Contact(); `                
+` contact.setUserId("adarshk"); `           
+` contact.setFullName("Adarsh"); `              
+` contact.setImageURL("R.drawable.applozic_ic_contact_picture_holo_light"); `           
+` contact.setEmailId("applozic.connect@gmail.com"); `               
 
 
 **Step 2: add contacts :**
@@ -812,9 +838,9 @@ Example :
 
 
 
-` Context context = getApplicationContext(); `
-` AppContactService appContactService = new AppContactService(context); `
-` appContactService.add(contact); `        
+` Context context = getApplicationContext(); `          
+` AppContactService appContactService = new AppContactService(context); `           
+` appContactService.add(contact); `                          
 
 
 
@@ -886,7 +912,7 @@ Are you looking for platform-native Sdks to integrate into your app. All you nee
 **Parameter Example**:    
 
 
-** json **     
+** json **                       
 ` {"userId":"userUniqueId","password":"password","deviceType":1,"emailId":"abc@gmail.com","applicationId":"applozic-sample-app","emailVerified":1} `      
 
 
@@ -945,8 +971,8 @@ Sample json-
 
 
 ** test **               
-` {"token":"AHRlWrqPBtxeFHrSi9n5QidJKllzpyMAOMVkLj",                 "emailId":"abc@xyz.com","userId":"abc","deviceKeyString":"ahBzfm1vYmktY29tLWFscGhhciYLEgZTdVVzZX,     `      
-` "timeZoneOffset":"19800000"} `       
+` {"token":"AHRlWrqPBtxeFHrSi9n5QidJKllzpyMAOMVkLj",                                "emailId":"abc@xyz.com","userId":"abc","deviceKeyString":"ahBzfm1vYmktY29tLWFscGhhciYLEgZTdVVzZX,               `      
+` "timeZoneOffset":"19800000"} `                 
 
 
 
@@ -1043,16 +1069,16 @@ In order to provide consistent service to all the users, there is a limitation o
 
 
    
-` {"message":[{"keyString":"agpzfmFwcGxvemljchALEgNTbXMYgICAgK_huQsM","deviceKeyString": `
-` "agpzfmFwcGxvemljciYLEgZTdVVzZXIYgICAgK_hmQoMCxIGRGV2aWNlGICAgICAgIAKDA", `
-` "suUserKeyString":"agpzfmFwcGxvemljchMLEgZTdVVzZXIYgICAgK_hmQoM","to":"123", `
-` "message":"Hi, how r u??","sent":false,"sendToDevice":true,"shared":false,"createdAtTime":1437565530994, `
-` "type":5,"source":1,"contactIds":"9738150...","storeOnDevice":true,"fileMetaKeyStrings":[],"read":true},{"keyString":"agpzfmFwcGxve mljchALEgNTbXMYgICAgPiJrAsM","deviceKeyString": `
-` "agpzfmFwcGxvemljciYLEgZTdVVzZXIYgICAgK_  `
-` hmQoMCxIGRGV2aWNlGICAgICAgIAKDA","suUserKeyString": `
-` "agpzfmFwcGxvemljchMLEgZTdVVzZXIYgICAgK_hmQoM", `
-` "to":"123","message":"i m fine! what about u?","sent":false,"sendToDevice":true,"shared":false,"createdAtTime":1437565473333, `
-` "type":5,"source":1,"contactIds":"9738150..","storeOnDevice":true,"fileMetaKeyStrings":[],"read":true}]} `     
+` {"message":[{"keyString":"agpzfmFwcGxvemljchALEgNTbXMYgICAgK_huQsM","deviceKeyString": `          
+` "agpzfmFwcGxvemljciYLEgZTdVVzZXIYgICAgK_hmQoMCxIGRGV2aWNlGICAgICAgIAKDA", `           
+` "suUserKeyString":"agpzfmFwcGxvemljchMLEgZTdVVzZXIYgICAgK_hmQoM","to":"123", `                
+` "message":"Hi, how r u??","sent":false,"sendToDevice":true,"shared":false,"createdAtTime":1437565530994, `            
+` "type":5,"source":1,"contactIds":"9738150...","storeOnDevice":true,"fileMetaKeyStrings":[],"read":true}, `                     `{"keyString":"agpzfmFwcGxve mljchALEgNTbXMYgICAgPiJrAsM","deviceKeyString": `              
+` "agpzfmFwcGxvemljciYLEgZTdVVzZXIYgICAgK_  `               
+` hmQoMCxIGRGV2aWNlGICAgICAgIAKDA","suUserKeyString": `             
+` "agpzfmFwcGxvemljchMLEgZTdVVzZXIYgICAgK_hmQoM", `             
+` "to":"123","message":"i m fine! what about u?","sent":false,"sendToDevice":true,"shared":false,"createdAtTime":1437565473333, `   
+` "type":5,"source":1,"contactIds":"9738150..","storeOnDevice":true,"fileMetaKeyStrings":[],"read":true}]} `                
 
 
 
@@ -1198,10 +1224,10 @@ After your app login validation, copy the following code to create applozic user
 
 
 ** Objective-C **           
-`  ALUser *user = [[ALUser alloc] init]; `
-   `  [user setApplicationId:@"applozic-sample-app"]; // REPLACE SAMPLE ID with your application-Id `
-   `  [user setUserId:[self.userIdField text]]; //replace [self.userIdField text] with user's unique id here `
-   ` [user setEmailId:[self.emailField text]]; //optional `     
+`  ALUser *user = [[ALUser alloc] init]; `          
+   `  [user setApplicationId:@"applozic-sample-app"]; // REPLACE SAMPLE ID with your application-Id `               
+   `  [user setUserId:[self.userIdField text]]; //replace [self.userIdField text] with user's unique id here `                      
+   ` [user setEmailId:[self.emailField text]]; //optional `                      
    
    
    
@@ -1209,24 +1235,26 @@ After your app login validation, copy the following code to create applozic user
    
    
 ** Objective-C **      
- ` ALRegisterUserClientService *registerUserClientService = [[ALRegisterUserClientService alloc] init]; `
-    
-` [registerUserClientService initWithCompletion:user withCompletion:^(ALRegistrationResponse *rResponse, NSError *error) { `
-   `     if (error) { `
-   `         NSLog(@"%@",error); `
-   `         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Response" `
-   `                                                             message:rResponse.message delegate: nil cancelButtonTitle:@"Ok" `  ` otherButtonTitles: nil, nil]; `
-`            [alertView show]; `
-   `         return ; `
-   `    } `
+ ` ALRegisterUserClientService *registerUserClientService = [[ALRegisterUserClientService alloc] init]; `           
+` [registerUserClientService initWithCompletion:user withCompletion:^(ALRegistrationResponse *rResponse, NSError *error)`       
+`{ `            
+`if (error) `       
+`{ `            
+   `NSLog(@"%@",error); `           
+   `UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Response" `               
+   ` message:rResponse.message delegate: nil cancelButtonTitle:@"Ok" `          
+   ` otherButtonTitles: nil, nil]; `            
+   `[alertView show]; `             
+   `return ; `                  
+   `} `                     
   
-   `     if (rResponse && [rResponse.message containsString: @"REGISTERED"]) `
-   `     {  `
-   `        ALMessageClientService *messageClientService = [[ALMessageClientService alloc] init]; `
-   `         [messageClientService addWelcomeMessage]; `
-   `     } `
-   `     NSLog(@"Registration response from server:%@", rResponse); `
-` }]; `        
+   `if (rResponse && [rResponse.message containsString: @"REGISTERED"]) `               
+   `{  `                
+   `ALMessageClientService *messageClientService = [[ALMessageClientService alloc] init]; `             
+   `[messageClientService addWelcomeMessage]; `             
+   `} `         
+   `NSLog(@"Registration response from server:%@", rResponse); `                
+   ` }]; `                                       
 
 
 
@@ -1241,32 +1269,34 @@ In your AppDelegate’s **didRegisterForRemoteNotificationsWithDeviceToken **met
 
 
 ** Objective-C **      
-` - (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken `
-` { `
+` - (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken `       
+` { `               
   
-   ` const unsigned *tokenBytes = [deviceToken bytes]; `
-   `  NSString *hexToken = [NSString stringWithFormat:@"%08x%08x%08x%08x%08x%08x%08x%08x", `
-  `                        ntohl(tokenBytes[0]), ntohl(tokenBytes[1]), ntohl(tokenBytes[2]),`
-   `                       ntohl(tokenBytes[3]), ntohl(tokenBytes[4]), ntohl(tokenBytes[5]),`
-   `                       ntohl(tokenBytes[6]), ntohl(tokenBytes[7])]; `
+   ` const unsigned *tokenBytes = [deviceToken bytes]; `            
+   `  NSString *hexToken = [NSString stringWithFormat:@"%08x%08x%08x%08x%08x%08x%08x%08x", `                
+  ` ntohl(tokenBytes[0]), ntohl(tokenBytes[1]), ntohl(tokenBytes[2]),`              
+   ` ntohl(tokenBytes[3]), ntohl(tokenBytes[4]), ntohl(tokenBytes[5]),`             
+   `ntohl(tokenBytes[6]), ntohl(tokenBytes[7])]; `              
     
-   `  NSString *apnDeviceToken = hexToken;  `
-   `  NSLog(@"apnDeviceToken: %@", hexToken); `
+   `  NSString *apnDeviceToken = hexToken;  `           
+   `  NSLog(@"apnDeviceToken: %@", hexToken); `                 
  
- ` //TO AVOID Multiple call to server check if previous apns token is same as recent one, if different call app lozic server.   `      
+ ` //TO AVOID Multiple call to server check if previous apns token is same as recent one, if different call app lozic server.  `         
 
-   ` if (![[ALUserDefaultsHandler getApnDeviceToken] isEqualToString:apnDeviceToken]) `
-  `  { `
-   `     ALRegisterUserClientService *registerUserClientService = [[ALRegisterUserClientService alloc] init]; `
-   `     [registerUserClientService updateApnDeviceTokenWithCompletion:apnDeviceToken withCompletion:^(ALRegistrationResponse `  ` *rResponse, NSError *error) { `
-  `          if (error) { `
-  `              NSLog(@"%@",error); `
- `               return ; `
-  `          } `
- `           NSLog(@"Registration response from server:%@", rResponse); `
-  `  }]; `
-  `  } `
-` } `           
+   ` if (![[ALUserDefaultsHandler getApnDeviceToken] isEqualToString:apnDeviceToken]) `             
+  `  { `                        
+   `     ALRegisterUserClientService *registerUserClientService = [[ALRegisterUserClientService alloc] init]; `         
+   ` [registerUserClientService updateApnDeviceTokenWithCompletion:apnDeviceToken withCompletion:^(ALRegistrationResponse `               ` *rResponse, NSError *error)`         
+   `{ `             
+  `if (error) `         
+  `{ `          
+  `NSLog(@"%@",error); `            
+ ` return ; `           
+  `} `              
+ ` NSLog(@"Registration response from server:%@", rResponse); `                 
+  `  }]; `              
+  `  } `            
+` } `                          
 
 
 
@@ -1277,19 +1307,20 @@ Once your app receive notification, pass it to applozic handler for applozic not
 
 
 ** Objective-C **      
-` - (void)application:(UIApplication*)application didReceiveRemoteNotification:(NSDictionary*)dictionary `
-` { `
-   `  NSLog(@"Received notification: %@", dictionary); `
+` - (void)application:(UIApplication*)application didReceiveRemoteNotification:(NSDictionary*)dictionary `          
+` { `           
+   `  NSLog(@"Received notification: %@", dictionary); `            
    
-`  ALPushNotificationService *pushNotificationService = [[ALPushNotificationService alloc] init]; `
- ` BOOL applozicProcessed = [pushNotificationService processPushNotification:dictionary updateUI:[[UIApplication sharedApplication] ` ` applicationState] == UIApplicationStateActive]; `
+`  ALPushNotificationService *pushNotificationService = [[ALPushNotificationService alloc] init]; `         
+ ` BOOL applozicProcessed = [pushNotificationService processPushNotification:dictionary updateUI:[[UIApplication sharedApplication] ` ` applicationState] == UIApplicationStateActive]; `             
   
-` //IF not a appplozic notification, process it  ` 
+` //IF not a appplozic notification, process it  `          
   
- ` if (!applozicProcessed) { `
-  ` //Note: notification for app `
-`  } `
-` } `       
+ ` if (!applozicProcessed) `            
+ `{ `               
+  ` //Note: notification for app `          
+`  } `          
+` } `                           
 
 
 
@@ -1297,29 +1328,26 @@ Once your app receive notification, pass it to applozic handler for applozic not
 
 
 ** Objective-C **      
-` - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions { `
-   
-
-`  // Override point for customization after application launch. `
-
- `   NSLog(@"launchOptions: %@", launchOptions); `
-    
-  `  if (launchOptions != nil) `
-  `  { `
-   `     NSDictionary *dictionary = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey]; `
-  `      if (dictionary != nil) `
-  `      { `
-  `          NSLog(@"Launched from push notification: %@", dictionary); `
-  `          ALPushNotificationService *pushNotificationService = [ALPushNotificationService init]; `
-`            BOOL applozicProcessed = [pushNotificationService processPushNotification:dictionary updateUI:NO]; `
- `           if (!applozicProcessed) { `
-   `             //Note: notification for app `
-  `          } `
-   `     } `
-   ` } `
-    
-   `  return YES; `
-` } `          
+` - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions`     
+`{ `                    
+   `  // Override point for customization after application launch. `                             
+`   NSLog(@"launchOptions: %@", launchOptions); `                 
+`  if (launchOptions != nil) `              
+  `  { `            
+`NSDictionary *dictionary = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey]; `         
+  ` if (dictionary != nil) `            
+  ` { `         
+  `NSLog(@"Launched from push notification: %@", dictionary); `         
+  `ALPushNotificationService *pushNotificationService = [ALPushNotificationService init]; `             
+`BOOL applozicProcessed = [pushNotificationService processPushNotification:dictionary updateUI:NO]; `               
+ `if (!applozicProcessed)`                  
+ `{ `           
+   `//Note: notification for app `              
+  ` } `             
+   ` } `            
+   ` } `            
+`  return YES; `                
+` } `                       
 
 
 
@@ -1337,12 +1365,10 @@ Below code will explain how to launch applozic message view. you can put this ac
 
 
 ** Objective - C **       
-` UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Applozic" `
-   `       bundle:[NSBundle bundleForClass:ALMessagesViewController.class]]; `
-
-` UIViewController *theTabBar = [storyboard    			instantiateViewControllerWithIdentifier:@"messageTabBar"]; `
-
-` [self presentViewController:theTabBar animated:YES completion:nil];   `           
+` UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Applozic" `             
+   ` bundle:[NSBundle bundleForClass:ALMessagesViewController.class]]; `              
+` UIViewController *theTabBar = [storyboard instantiateViewControllerWithIdentifier:@"messageTabBar"]; `            
+` [self presentViewController:theTabBar animated:YES completion:nil];   `                  
 
 
 
@@ -1356,12 +1382,12 @@ To launch conversation for a particular user (most common use case is to launch 
 
 
 ** Objective - C **        
-` UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Applozic" `
-`  bundle:[NSBundle bundleForClass:ALChatViewController.class]]; `
- `    ALChatViewController *chatView =(ALChatViewController*) [storyboard ` `instantiateViewControllerWithIdentifier:@"ALChatViewController"]; ` 
-    ` chatView.contactIds =@"<USER_ID>";//SET specific USER'S ID  `
-   `  UINavigationController *conversationViewNavController = [[UINavigationController alloc] initWithRootViewController:chatView]; `
-    ` [self presentViewController:conversationViewNavController animated:YES completion:nil]; `          
+` UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Applozic" `                 
+`  bundle:[NSBundle bundleForClass:ALChatViewController.class]]; `              
+ `    ALChatViewController *chatView =(ALChatViewController*) [storyboard `              `instantiateViewControllerWithIdentifier:@"ALChatViewController"]; `                
+    ` chatView.contactIds =@"<USER_ID>";//SET specific USER'S ID  `                 
+   ` UINavigationController *conversationViewNavController = [[UINavigationController alloc] initWithRootViewController:chatView]; `
+    ` [self presentViewController:conversationViewNavController animated:YES completion:nil]; `                                 
     
     
     
@@ -1379,8 +1405,8 @@ Paste the following code on logout.
     
     
 ** Objective - C **           
-  ` ALRegisterUserClientService *registerUserClientService = [[ALRegisterUserClientService alloc] init]; `
-  `     [registerUserClientService logout];  `           
+  ` ALRegisterUserClientService *registerUserClientService = [[ALRegisterUserClientService alloc] init]; `              
+  `     [registerUserClientService logout];  `                     
   
   
   
@@ -1401,16 +1427,15 @@ Applozic framework provides convenient APIs for building your own contact. Devel
 
 
 ** Objective - C **        
-` ALContact *contact1 = [[ALContact alloc] init]; `
-`contact1.userId = @"adarshk"; // unique Id for user `
-` contact1.fullName = @"Rathan"; // Fullname of the contact. `
+` ALContact *contact1 = [[ALContact alloc] init]; `             
+`contact1.userId = @"adarshk"; // unique Id for user `              
+` contact1.fullName = @"Rathan"; // Fullname of the contact. `              
 
-` //Display name for contact. This name would be displayed to the user in chat and contact list. `
-` contact1.displayName = @"Rathan"; `
-` contact1.email = @"123@abc.com"; //Email Id for the contact. `
-` //Contact image url. Contact image would be downloaded automatically from URL. `
-` contact1.contactImageUrl =@" https://www.applozic.com/resources/images/applozic_logo.gif"; ` 
-
+` //Display name for contact. This name would be displayed to the user in chat and contact list. `                  
+` contact1.displayName = @"Rathan"; `               
+` contact1.email = @"123@abc.com"; //Email Id for the contact. `                
+` //Contact image url. Contact image would be downloaded automatically from URL. `                      
+` contact1.contactImageUrl =@" https://www.applozic.com/resources/images/applozic_logo.gif"; `              
 ` contact1.localImageResourceName = @"4.jpg"; // If this field is mentioned, Contact image will be taken from local storges. `      
 
 

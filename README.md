@@ -1110,11 +1110,10 @@ In order to provide consistent service to all the users, there is a limitation o
 | ------------- | ------------- | 
 | success  | Request is successfully processedl  |
 | error  |This will come if any exception occurs on server or all the parameters are null. In case of any exception contact devashish@applozic.com  |
-| UnAuthorized Access  | This will come if the emailId and apiKey doesn't match or your API Pack got expired.  |       
+| UnAuthorized Access  | This will come if the emailId and apiKey doesn't match or your API Pack got expired.  |         
 
 
-
-# IOS SDK           
+ # IOS SDK           
 
 
 ### Overview        

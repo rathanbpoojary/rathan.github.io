@@ -43,7 +43,7 @@ Step 2: For the standard user interface, add the following Applozic messaging pl
    h.appendChild(s);
    window.applozic=m;
    m.init=function(t){m._globals=t;}})(document, window.applozic || {});
-</script>
+          </script>
 ```
  
  

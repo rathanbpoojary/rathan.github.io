@@ -33,15 +33,15 @@ Step 2: For the standard user interface, add the following Applozic messaging pl
 
 
 ` <script type="text/javascript"> `                    
-`(function(d, m){`     
-       ` var s, h; s = document.createElement("script");  `  
-     `s.type = "text/javascript";   `
-     `s.async=true;   `  
-     `s.src="https://apps.applozic.com/sidebox.app";       `            
-     `h=document.getElementsByTagName('head')[0]; `              
-     `h.appendChild(s);   `       
-     `window.applozic=m; `       
-     `m.init=function(t){m._globals=t;}})(document, window.applozic || {});  `              
+`(function(d, m){`
+`   var s, h; s = document.createElement("script");  `  
+`   s.type = "text/javascript";   `
+`   s.async=true;   `  
+`   s.src="https://apps.applozic.com/sidebox.app";       `            
+`   h=document.getElementsByTagName('head')[0]; `              
+`   h.appendChild(s);   `       
+`   window.applozic=m; `       
+`   m.init=function(t){m._globals=t;}})(document, window.applozic || {});  `              
 `</script> `  
  
  

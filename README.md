@@ -68,17 +68,16 @@ Step 4: Replace the following parameters in script:
 
 
 
-
-` userId: 'User Unique id',                 // required `    
-` appId: 'Your application key'              // required `      
-` contactDisplayName: 'Callback function to return contact name by userId', `      
-`// function should receive one parameter i.e userId. Example given in Step 6 (optional) `       
-`contactDisplayImage: 'Callback function to return image src of contact by  userId', `      
-`// function should receive one parameter i.e userId'. Example given in Step 7 (optional) `        
-` desktopNotification: true or false, `      
-` // only for chrome browser enable or disable desktop notifications for incoming messages (optional) `         
-
-
+```
+ userId: 'User Unique id',                 // required   
+ appId: 'Your application key'              // required     
+ contactDisplayName: 'Callback function to return contact name by userId',      
+ // function should receive one parameter i.e userId. Example given in Step 6 (optional)        
+ contactDisplayImage: 'Callback function to return image src of contact by  userId',     
+ // function should receive one parameter i.e userId'. Example given in Step 7 (optional)     
+ desktopNotification: true or false,       
+ // only for chrome browser enable or disable desktop notifications for incoming messages (optional)          
+```
 
 
 Note : Example of callback functions and json format is given in below in step 6,7

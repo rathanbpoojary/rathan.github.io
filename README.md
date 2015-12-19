@@ -932,7 +932,8 @@ Are you looking for platform-native Sdks to integrate into your app. All you nee
 
 ** json **                         
 ```
-{"userId":"userUniqueId","password":"password","deviceType":1,"emailId":"abc@gmail.com","applicationId":"applozic-sample-app","emailVerified":1} 
+{"userId":"userUniqueId","password":"password","deviceType":1,"emailId":"abc@gmail.com",
+"applicationId":"applozic-sample-app","emailVerified":1} 
 ```
 
 
@@ -992,7 +993,8 @@ Sample json-
 
 ** test **               
 ``` 
-{"token":"AHRlWrqPBtxeFHrSi9n5QidJKllzpyMAOMVkLj",                                  "emailId":"abc@xyz.com","userId":"abc","deviceKeyString":"ahBzfm1vYmktY29tLWFscGhhciYLEgZTdVVzZX,                    
+{"token":"AHRlWrqPBtxeFHrSi9n5QidJKllzpyMAOMVkLj",
+"emailId":"abc@xyz.com","userId":"abc","deviceKeyString":"ahBzfm1vYmktY29tLWFscGhhciYLEgZTdVVzZX,                    
 "timeZoneOffset":"19800000"} 
 ```
 
@@ -1095,7 +1097,8 @@ In order to provide consistent service to all the users, there is a limitation o
 "agpzfmFwcGxvemljciYLEgZTdVVzZXIYgICAgK_hmQoMCxIGRGV2aWNlGICAgICAgIAKDA",            
 "suUserKeyString":"agpzfmFwcGxvemljchMLEgZTdVVzZXIYgICAgK_hmQoM","to":"123",                 
 "message":"Hi, how r u??","sent":false,"sendToDevice":true,"shared":false,"createdAtTime":1437565530994,             
-"type":5,"source":1,"contactIds":"9738150...","storeOnDevice":true,"fileMetaKeyStrings":[],"read":true},                          {"keyString":"agpzfmFwcGxve mljchALEgNTbXMYgICAgPiJrAsM","deviceKeyString":               
+"type":5,"source":1,"contactIds":"9738150...","storeOnDevice":true,"fileMetaKeyStrings":[],"read":true},
+{"keyString":"agpzfmFwcGxve mljchALEgNTbXMYgICAgPiJrAsM","deviceKeyString":               
 "agpzfmFwcGxvemljciYLEgZTdVVzZXIYgICAgK_               
 hmQoMCxIGRGV2aWNlGICAgICAgIAKDA","suUserKeyString":             
 "agpzfmFwcGxvemljchMLEgZTdVVzZXIYgICAgK_hmQoM",             
@@ -1306,12 +1309,14 @@ In your AppDelegate’s **didRegisterForRemoteNotificationsWithDeviceToken **met
     NSString *apnDeviceToken = hexToken;            
     NSLog(@"apnDeviceToken: %@", hexToken);                  
  
-   //TO AVOID Multiple call to server check if previous apns token is same as recent one, if different call app lozic server.           
+   //TO AVOID Multiple call to server check if previous apns token is same as recent one, 
+   if different call app lozic server.           
 
     if (![[ALUserDefaultsHandler getApnDeviceToken] isEqualToString:apnDeviceToken])              
     {                         
        ALRegisterUserClientService *registerUserClientService = [[ALRegisterUserClientService alloc] init];          
-       [registerUserClientService updateApnDeviceTokenWithCompletion:apnDeviceToken withCompletion:^(ALRegistrationResponse                *rResponse, NSError *error)       
+       [registerUserClientService updateApnDeviceTokenWithCompletion:apnDeviceToken withCompletion:^(ALRegistrationResponse
+       *rResponse, NSError *error)       
      {              
        if (error)         
           {          
@@ -1336,7 +1341,8 @@ Once your app receive notification, pass it to applozic handler for applozic not
    NSLog(@"Received notification: %@", dictionary);           
    
    ALPushNotificationService *pushNotificationService = [[ALPushNotificationService alloc] init];        
-   BOOL applozicProcessed = [pushNotificationService processPushNotification:dictionary updateUI:[[UIApplication sharedApplication]     applicationState] == UIApplicationStateActive];             
+   BOOL applozicProcessed = [pushNotificationService processPushNotification:dictionary updateUI:
+   [[UIApplication sharedApplication]     applicationState] == UIApplicationStateActive];             
   
     //IF not a appplozic notification, process it            
   
@@ -1408,9 +1414,11 @@ To launch conversation for a particular user (most common use case is to launch 
 ```
 UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Applozic"                 
 bundle:[NSBundle bundleForClass:ALChatViewController.class]];             
-ALChatViewController *chatView =(ALChatViewController*) [storyboard                 instantiateViewControllerWithIdentifier:@"ALChatViewController"];                
+ALChatViewController *chatView =(ALChatViewController*) [storyboard 
+instantiateViewControllerWithIdentifier:@"ALChatViewController"];                
 chatView.contactIds =@"<USER_ID>";//SET specific USER'S ID                  
-UINavigationController *conversationViewNavController = [[UINavigationController alloc] initWithRootViewController:chatView]; 
+UINavigationController *conversationViewNavController = 
+[[UINavigationController alloc] initWithRootViewController:chatView]; 
 [self presentViewController:conversationViewNavController animated:YES completion:nil];                               
     
 ```    
@@ -1482,7 +1490,8 @@ you can directly build contact from dictionary,all you have to do is just pass a
   [demodictionary setValue:@"aman" forKey:@"displayName"];  
   [demodictionary setValue:@"aman@applozic.com" forKey:@"email"]; 
   [demodictionary setValue:@"http://images.landofnod.com/is/image/LandOfNod/ 
-  Letter_Giant_Enough_A_231533_LL/$web_zoom$&wid=550&hei=550&/1308310656/not-giant-enough-letter-a.jpg" forKey:@"contactImageUrl"]; 
+  Letter_Giant_Enough_A_231533_LL/$web_zoom$&wid=
+  550&hei=550&/1308310656/not-giant-enough-letter-a.jpg" forKey:@"contactImageUrl"]; 
   [demodictionary setValue:nil forKey:@"localImageResourceName"];              
   ALContact *contact5 = [[ALContact alloc] initWithDict:demodictionary];                   
 ```
@@ -1498,7 +1507,8 @@ you can directly build contact from dictionary,all you have to do is just pass a
 ** Objective -C **       
 ```
 //Contact -------- Example with json                   
-NSString *jsonString =@"{\"userId\": \"applozic\",\"fullName\": \"Applozic\",\"contactNumber\": \"9535008745\",\"displayName\":  \"Applozic Support\",\"contactImageUrl\": \"https://applozic.com/resources/images/aboutus/rathan.jpg\",\"email\":       
+NSString *jsonString =@"{\"userId\": \"applozic\",\"fullName\": \"Applozic\",
+\"contactNumber\": \"9535008745\",\"displayName\":  \"Applozic Support\",\"contactImageUrl\": \"https://applozic.com/resources/images/aboutus/rathan.jpg\",\"email\":       
 \"devashish@applozic.com\",\"localImageResourceName\":null}";                    
 ALContact *contact4 = [[ALContact alloc] initWithJSONString:jsonString];                        
  ```
@@ -1607,9 +1617,9 @@ You can build your contact service using applozic contact apis. Below is the sam
     }              
 
 
-   //----------------------------------------------------------------------------------------------------------------------         
+   //-----------------------------------------------------------------------------------------------------------------         
    // Helper method for demo purpose. This method shows possible ways to insert contact and save it in local database.       
-   //-------------------------------------------------------------------------------------------------------------------        
+   //-----------------------------------------------------------------------------------------------------------------       
 
     - (void) insertInitialContacts{                  
 
@@ -1639,12 +1649,14 @@ You can build your contact service using applozic contact apis. Below is the sam
     contact3.fullName = @"DON";
     contact3.displayName = @"DON";               
     contact3.email = @"don@baba.com";                 
-    contact3.contactImageUrl = @"http://tinyhousetalk.com/wp-content/uploads/320-Sq-Ft-Orange-Container-Guest-House-00.jpg";    
+    contact3.contactImageUrl = @"http://tinyhousetalk.com/wp-content/uploads/
+    320-Sq-Ft-Orange-Container-Guest-House-00.jpg";    
     contact3.localImageResourceName = nil;                   
     
     //Contact -------- Example with json                             
     
-    NSString *jsonString =@"{\"userId\": \"applozic\",\"fullName\": \"Applozic\",\"contactNumber\": \"9535008745\",\"displayName\":      \"Applozic Support\",\"contactImageUrl\": \"https://applozic.com/resources/images/aboutus/rathan.jpg\",\"email\":                    \"devashish@applozic.com\",\"localImageResourceName\":null}";                    
+    NSString *jsonString =@"{\"userId\": \"applozic\",\"fullName\": \"Applozic\",
+    \"contactNumber\": \"9535008745\",\"displayName\":      \"Applozic Support\",\"contactImageUrl\": \"https://applozic.com/resources/images/aboutus/rathan.jpg\",\"email\":                    \"devashish@applozic.com\",\"localImageResourceName\":null}";                    
     
     ALContact *contact4 = [[ALContact alloc] initWithJSONString:jsonString];                              
 
@@ -1655,7 +1667,8 @@ You can build your contact service using applozic contact apis. Below is the sam
    [demodictionary setValue:@"aman sharma" forKey:@"fullName"];                 
    [demodictionary setValue:@"aman" forKey:@"displayName"];                  
    [demodictionary setValue:@"aman@applozic.com" forKey:@"email"];                   
-   [demodictionary setValue:@"http://images.landofnod.com/is/image                        /LandOfNod/Letter_Giant_Enough_A_231533_LL/$web_zoom$&wid=550&hei=550&/1308310656/not-giant-enough-letter-a.jpg"             
+   [demodictionary setValue:@"http://images.landofnod.com/is/image
+   /LandOfNod/Letter_Giant_Enough_A_231533_LL/$web_zoom$&wid=550&hei=550&/1308310656/not-giant-enough-letter-a.jpg"             
    forKey:@"contactImageUrl"];               
    [demodictionary setValue:nil forKey:@"localImageResourceName"];                   
     

@@ -53,7 +53,7 @@ Step 2: For the standard user interface, add the following Applozic messaging pl
  
  
  
-` <script type="text/javascript" > `
+` <script type="text/javascript" > `            
 ` window.applozic.init({userId: 'user id', appId: 'application key', `
 ` contactDisplayName: displayName, contactDisplayImage: contactImageSrc, desktopNotification: true}); `
 ` </script> `    

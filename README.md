@@ -354,9 +354,7 @@ Applozic Application Key:
 
 
 ** java **     
-` <meta-data `              
-   `android:name="com.applozic.application.key" `               
-   `android:value="YOUR_APPLOZIC_APPLICATION_KEY" /> `                       
+` <meta-data android:name="com.applozic.application.key" android:value="YOUR_APPLOZIC_APPLICATION_KEY" /> `                                     
    
 Applozic Application URL:        
    
@@ -367,7 +365,7 @@ Applozic Application URL:
  Applozic Notification package name and launcher icon:        
  
  ** java **       
-` <meta-data android:name="com.applozic.mobicomkit.notification.icon" android:resource="YOUR_LAUNCHER_ICON" /> `            
+` <meta-data android:name="com.applozic.mobicomkit.notification.icon" android:resource="YOUR_LAUNCHER_ICON" /> `                   
    
 ` <meta-data android:name="com.package.name" android:value="${applicationId}" /> `                                            
    
@@ -517,8 +515,8 @@ Replace APP_PARENT_ACTIVITY with your app's parent activity.
 
 ` @Override `           
 `public void onSuccess(RegistrationResponse registrationResponse, Context context)`         
-{ `     
-`} `            
+`{ `              
+`} `                       
 
 `@Override `            
 `   public void onFailure(RegistrationResponse registrationResponse, Exception exception)`          
@@ -527,9 +525,8 @@ Replace APP_PARENT_ACTIVITY with your app's parent activity.
 
 ` User user = new User(); `         
 ` user.setUserId(userId); `         
-` user.setEmail(email); //optional `            
-
-` new UserLoginTask(user, listener, this).execute((Void) null); `                              
+` user.setEmail(email); //optional `                       
+` new UserLoginTask(user, listener, this).execute((Void) null); `                                      
 
 
 If it is a new user, new user account will get created else existing user will be logged in to the application.
@@ -1409,9 +1406,8 @@ you can directly build contact from dictionary,all you have to do is just pass a
 `  [demodictionary setValue:@"aman@applozic.com" forKey:@"email"]; `
 `  [demodictionary setValue:@"http://images.landofnod.com/is/image/LandOfNod/ `
 `Letter_Giant_Enough_A_231533_LL/$web_zoom$&wid=550&hei=550&/1308310656/not-giant-enough-letter-a.jpg" forKey:@"contactImageUrl"]; `
-` [demodictionary setValue:nil forKey:@"localImageResourceName"]; `   
-
-` ALContact *contact5 = [[ALContact alloc] initWithDict:demodictionary]; `          
+` [demodictionary setValue:nil forKey:@"localImageResourceName"]; `             
+` ALContact *contact5 = [[ALContact alloc] initWithDict:demodictionary]; `                   
 
 
 
@@ -1423,12 +1419,10 @@ you can directly build contact from dictionary,all you have to do is just pass a
 
 
 ** Objective -C **       
-` //Contact -------- Example with json `
-    
+` //Contact -------- Example with json `                    
 `  NSString *jsonString =@"{\"userId\": \"applozic\",\"fullName\": \"Applozic\",\"contactNumber\": \"9535008745\",\"displayName\": ` ` \"Applozic Support\",\"contactImageUrl\": \"https://applozic.com/resources/images/aboutus/rathan.jpg\",\"email\": `       
-` \"devashish@applozic.com\",\"localImageResourceName\":null}"; `
-    
- `   ALContact *contact4 = [[ALContact alloc] initWithJSONString:jsonString];  `         
+` \"devashish@applozic.com\",\"localImageResourceName\":null}"; `                   
+     `   ALContact *contact4 = [[ALContact alloc] initWithJSONString:jsonString];  `                       
  
  
  
@@ -1442,9 +1436,8 @@ Once contacts has been created, you need to save it.  APIs are provided by Applo
 
 
 ** Objective - C **    
- `ALContactDBService * alContactDBService = [[ALContactDBService alloc]init]; `
-
-` [ alContactDBService addContact:contact];    `            
+ `ALContactDBService * alContactDBService = [[ALContactDBService alloc]init]; `                 
+ `[ alContactDBService addContact:contact];    `                              
 
 
 
@@ -1457,146 +1450,140 @@ You can build your contact service using applozic contact apis. Below is the sam
 
 ** Objective - C **            
 
-`// `
-`//  ALContactService.m`
-`//  ChatApp`
+`// `                   
+`//  ALContactService.m`                
+`//  ChatApp`               
+`//`                
+`//  Created by Adarsh on 23/10/15.`                    
+`//  Copyright © 2015 AppLogic. All rights reserved.`                   
 `//`
-`//  Created by Adarsh on 23/10/15.`
-`//  Copyright © 2015 AppLogic. All rights reserved.`
-`//`
 
-` #import "ALContactService.h" `
-` #import "ALContactDBService.h" `
-` #import "ALDBHandler.h" `
+` #import "ALContactService.h" `                
+` #import "ALContactDBService.h" `              
+` #import "ALDBHandler.h" `                 
 
-` @implementation ALContactService `
+` @implementation ALContactService `                
 
- ` ALContactDBService * alContactDBService; `
+ ` ALContactDBService * alContactDBService; `                       
 
-` -(instancetype)  init{ `
-    ` self= [super init]; `
-    ` alContactDBService = [[ALContactDBService alloc]init]; `
-    `return self; `
-` } `
+` -(instancetype)  init{ `              
+    ` self= [super init]; `             
+    ` alContactDBService = [[ALContactDBService alloc]init]; `              
+    `return self; `                  
+` } `                           
 
-` #pragma mark Deleting APIS `
+` #pragma mark Deleting APIS `              
 
 
-` //For purgeing single contacts `
+` //For purgeing single contacts `              
 
-` -(BOOL)purgeContact:(ALContact *)contact{ `
- ` return [ alContactDBService purgeContact:contact]; `
-`  } `
+` -(BOOL)purgeContact:(ALContact *)contact{ `               
+ ` return [ alContactDBService purgeContact:contact]; `             
+`  } `              
 
 
-` //For purgeing multiple contacts `
-` -(BOOL)purgeListOfContacts:(NSArray *)contacts{ `
+` //For purgeing multiple contacts `                
+` -(BOOL)purgeListOfContacts:(NSArray *)contacts{ `                 
     
-   `  return [ alContactDBService purgeListOfContacts:contacts]; `
-` } `
+   `  return [ alContactDBService purgeListOfContacts:contacts]; `              
+` } `               
 
 
-` //For delting all contacts at once `
+` //For delting all contacts at once `              
 
-` -(BOOL)purgeAllContact{ `
-`  return  [alContactDBService purgeAllContact]; `
+` -(BOOL)purgeAllContact{ `                         
+`  return  [alContactDBService purgeAllContact]; `              
+`} `                    
+
+` #pragma mark Update APIS `                
+
+
+` -(BOOL)updateConatct:(ALContact *)contact{ `              
+ `   return [alContactDBService updateConatct:contact]; `               
     
-` } `
-
-` #pragma mark Update APIS `
+` } `                   
 
 
-` -(BOOL)updateConatct:(ALContact *)contact{ `
- `   return [alContactDBService updateConatct:contact]; `
-    
-` } `
-
-
-` -(BOOL)updateListOfContacts:(NSArray *)contacts{ `
- `   return [alContactDBService updateListOfContacts:contacts]; `
+` -(BOOL)updateListOfContacts:(NSArray *)contacts{ `                    
+ `   return [alContactDBService updateListOfContacts:contacts]; `               
 ` } `
 
 
-` #pragma mark addition APIS `
+` #pragma mark addition APIS `              
 
 
-` -(BOOL)addListOfContacts:(NSArray *)contacts{ `
-  `  return [alContactDBService updateListOfContacts:contacts]; `
+` -(BOOL)addListOfContacts:(NSArray *)contacts{ `               
+  `  return [alContactDBService updateListOfContacts:contacts]; `                           
+`} `            
 
-`} `
+` -(BOOL)addContact:(ALContact *)userContact{ `                 
+   `  return [alContactDBService addContact:userContact]; `             
+` } `           
 
-` -(BOOL)addContact:(ALContact *)userContact{ `
-   `  return [alContactDBService addContact:userContact]; `
-
-` } `
-
-` #pragma mark fetching APIS `
+` #pragma mark fetching APIS `                  
 
 
-` - (ALContact *)loadContactByKey:(NSString *) key value:(NSString*) value{ `
-    ` return [alContactDBService loadContactByKey:key value:value]; `
+` - (ALContact *)loadContactByKey:(NSString *) key value:(NSString*) value{ `           
+    ` return [alContactDBService loadContactByKey:key value:value]; `           
+` } `               
 
-` } `
 
+` //----------------------------------------------------------------------------------------------------------------------`          
+`// Helper method for demo purpose. This method shows possible ways to insert contact and save it in local database.`           
+`//----------------------------------------------------------------------------------------------------------------------`          
 
-` //----------------------------------------------------------------------------------------------------------------------`
-`// Helper method for demo purpose. This method shows possible ways to insert contact and save it in local database.`
-`//----------------------------------------------------------------------------------------------------------------------`
+` - (void) insertInitialContacts{ `                 
 
-` - (void) insertInitialContacts{ `
-
-   ` ALDBHandler * theDBHandler = [ALDBHandler sharedInstance]; `
+   ` ALDBHandler * theDBHandler = [ALDBHandler sharedInstance]; `                       
     
-  `  //contact 1 `
-  `  ALContact *contact1 = [[ALContact alloc] init];`
-   ` contact1.userId = @"adarshk";`
-   ` contact1.fullName = @"Rathan";`
-   ` contact1.displayName = @"Rathan";`
-   ` contact1.email = @"123@abc.com";`
-  `  contact1.contactImageUrl = nil;`
-   ` contact1.localImageResourceName = @"4.jpg";`
+  `  //contact 1 `              
+  `  ALContact *contact1 = [[ALContact alloc] init];`                       
+   ` contact1.userId = @"adarshk";`             
+   ` contact1.fullName = @"Rathan";`                
+   ` contact1.displayName = @"Rathan";`                 
+   ` contact1.email = @"123@abc.com";`                  
+  `  contact1.contactImageUrl = nil;`               
+   ` contact1.localImageResourceName = @"4.jpg";`               
     
-  `  // contact 2 `
-   ` ALContact *contact2 = [[ALContact alloc] init]; `
-  `  contact2.userId = @"marvel"; `
-  `  contact2.fullName = @"abhishek thapliyal"; `
-  `  contact2.displayName = @"abhishek"; `
-   ` contact2.email = @"456@abc.com"; `
-   ` contact2.contactImageUrl = nil; `
-   ` contact2.localImageResourceName = @"4.jpg"; `
+  `  // contact 2 `                 
+   ` ALContact *contact2 = [[ALContact alloc] init]; `              
+  `  contact2.userId = @"marvel"; `                 
+  `  contact2.fullName = @"abhishek thapliyal"; `               
+  `  contact2.displayName = @"abhishek"; `              
+   ` contact2.email = @"456@abc.com"; `             
+   ` contact2.contactImageUrl = nil; `                  
+   ` contact2.localImageResourceName = @"4.jpg"; `                      
     
     
-   ` ALContact *contact3 = [[ALContact alloc] init]; `
-   ` contact3.userId = @"don";`
+   ` ALContact *contact3 = [[ALContact alloc] init]; `                  
+   ` contact3.userId = @"don";`                 
 `    contact3.fullName = @"DON";`
- `   contact3.displayName = @"DON";`
-  `  contact3.email = @"don@baba.com";`
-   ` contact3.contactImageUrl = @"http://tinyhousetalk.com/wp-content/uploads/320-Sq-Ft-Orange-Container-Guest-House-00.jpg";`
-`    contact3.localImageResourceName = nil;`
+ `   contact3.displayName = @"DON";`                
+  `  contact3.email = @"don@baba.com";`                 
+   ` contact3.contactImageUrl = @"http://tinyhousetalk.com/wp-content/uploads/320-Sq-Ft-Orange-Container-Guest-House-00.jpg";`      
+`    contact3.localImageResourceName = nil;`                    
     
- `//Contact -------- Example with json `
+ `//Contact -------- Example with json `                            
     
- `   NSString *jsonString =@"{\"userId\": \"applozic\",\"fullName\": \"Applozic\",\"contactNumber\": \"9535008745\",\"displayName\":` `\"Applozic Support\",\"contactImageUrl\": \"https://applozic.com/resources/images/aboutus/rathan.jpg\",\"email\":` `\"devashish@applozic.com\",\"localImageResourceName\":null}"; `
+ `   NSString *jsonString =@"{\"userId\": \"applozic\",\"fullName\": \"Applozic\",\"contactNumber\": \"9535008745\",\"displayName\":` `\"Applozic Support\",\"contactImageUrl\": \"https://applozic.com/resources/images/aboutus/rathan.jpg\",\"email\":`                      `\"devashish@applozic.com\",\"localImageResourceName\":null}"; `                    
     
-   ` ALContact *contact4 = [[ALContact alloc] initWithJSONString:jsonString]; `
+   ` ALContact *contact4 = [[ALContact alloc] initWithJSONString:jsonString]; `                             
 
-  `  //Contact ------- Example with dictonary `
+  `  //Contact ------- Example with dictonary `                 
     
-   ` NSMutableDictionary *demodictionary = [[NSMutableDictionary alloc] init]; `
-   ` [demodictionary setValue:@"aman999" forKey:@"userId"]; `
-   ` [demodictionary setValue:@"aman sharma" forKey:@"fullName"]; `
-   ` [demodictionary setValue:@"aman" forKey:@"displayName"]; `
-   ` [demodictionary setValue:@"aman@applozic.com" forKey:@"email"]; `
-  `  [demodictionary setValue:@"http://images.landofnod.com/is/image` `/LandOfNod/Letter_Giant_Enough_A_231533_LL/$web_zoom$&wid=550&hei=550&/1308310656/not-giant-enough-letter-a.jpg" `  
-  ` forKey:@"contactImageUrl"]; `
-   ` [demodictionary setValue:nil forKey:@"localImageResourceName"];`
+   ` NSMutableDictionary *demodictionary = [[NSMutableDictionary alloc] init]; `                    
+   ` [demodictionary setValue:@"aman999" forKey:@"userId"]; `               
+   ` [demodictionary setValue:@"aman sharma" forKey:@"fullName"]; `                 
+   ` [demodictionary setValue:@"aman" forKey:@"displayName"]; `                 
+   ` [demodictionary setValue:@"aman@applozic.com" forKey:@"email"]; `                  
+  `  [demodictionary setValue:@"http://images.landofnod.com/is/image`                    `/LandOfNod/Letter_Giant_Enough_A_231533_LL/$web_zoom$&wid=550&hei=550&/1308310656/not-giant-enough-letter-a.jpg" `             
+  ` forKey:@"contactImageUrl"]; `               
+   ` [demodictionary setValue:nil forKey:@"localImageResourceName"];`                   
     
-  `  ALContact *contact5 = [[ALContact alloc] initWithDict:demodictionary];`
-   ` [theDBHandler addListOfContacts:@[contact1, contact2, contact3, contact4, contact5]]; `
-   
-` }`
-
- `@end `
+  `  ALContact *contact5 = [[ALContact alloc] initWithDict:demodictionary];`                
+   ` [theDBHandler addListOfContacts:@[contact1, contact2, contact3, contact4, contact5]]; `                               
+   ` }`                                                    
+ `@end `                    
  
  
  

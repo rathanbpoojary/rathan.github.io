@@ -1661,7 +1661,8 @@ You can build your contact service using applozic contact apis. Below is the sam
     
     NSString *jsonString =@"{\"userId\": \"applozic\",\"fullName\": \"Applozic\",
     \"contactNumber\": \"9535008745\",\"displayName\":
-    \"Applozic Support\",\"contactImageUrl\": \"https://applozic.com/resources/images/aboutus/rathan.jpg\",\"email\":                    \"devashish@applozic.com\",\"localImageResourceName\":null}";                    
+    \"Applozic Support\",\"contactImageUrl\": \"https://applozic.com/resources/images/aboutus/rathan.jpg\",\"email\":
+    \"devashish@applozic.com\",\"localImageResourceName\":null}";                    
     
     ALContact *contact4 = [[ALContact alloc] initWithJSONString:jsonString];                              
 

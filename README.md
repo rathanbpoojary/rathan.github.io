@@ -55,7 +55,7 @@ Step 2: For the standard user interface, add the following Applozic messaging pl
  
 ` <script type="text/javascript" > `            
 ` window.applozic.init({userId: 'user id', appId: 'application key', `
-` contactDisplayName: displayName, contactDisplayImage: contactImageSrc, desktopNotification: true}); `
+` contactDisplayName: displayName, contactDisplayImage: contactImageSrc, desktopNotification: true}); `                 
 ` </script> `    
 
 
@@ -108,15 +108,12 @@ Example:
 
 
    
-` function displayName(userId)      `  
-` { `    
- `  var contact = contacts[userId];      `
- `// used contacts variable as given above. `       
-` if (typeof contact !== 'undefined')      `
-`{ `      
-` return contact.displayName; `     
-`} `       
-` } `          
+` function displayName(userId)  { `                     
+ `  var contact = contacts[userId];      `          
+ `// used contacts variable as given above. `               
+` if (typeof contact !== 'undefined')   { `                  
+` return contact.displayName; `                  
+`} } `                    
 
 
 

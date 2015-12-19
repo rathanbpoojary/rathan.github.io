@@ -98,7 +98,8 @@ Contacts Json format is given below as a reference used in **displayName()** and
 
 
 ```
- var contacts = {"user1": {"userId": "user1", "displayName": "Devashish", "photoLink":  "https://www.applozic.com/resources/images/applozic_icon.png"},
+var contacts = {"user1": {"userId": "user1", "displayName": "Devashish", 
+"photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"},
 "user2": {"userId": "user2", "displayName": "Adarsh", "photoLink":    
 "https://www.applozic.com/resources/images/applozic_icon.png"}, 
 "user3": {"userId": "user3", "displayName": "Shanki", "photoLink":  

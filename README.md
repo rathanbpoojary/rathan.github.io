@@ -155,8 +155,10 @@ You can call below function to load contact list by passing contacts json as giv
 ```
 var contacts = {"contacts": [{"userId": "user1", "displayName": "Devashish", 
 "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, 
-{"userId": "user2", "displayName": "Adarsh", "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, 
-{"userId": "user3", "displayName": "Shanki", "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}]};       
+{"userId": "user2", "displayName": "Adarsh", 
+"photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, 
+{"userId": "user3", "displayName": "Shanki",
+"photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}]};       
 
  $applozic.fn.applozic('loadContacts', 'put-contacts-json-here'); // contacts json format given above          
 ```
@@ -259,7 +261,11 @@ Contacts Json format is given below as a reference used in **displayName()** and
 
 
 ``` 
- var contacts = {"user1": {"userId": "user1", "displayName": "Devashish", "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, "user2": {"userId": "user2", "displayName": "Adarsh", "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, "user3": {"userId": "user3", "displayName": "Shanki", "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}}; 
+ var contacts = {"user1": {"userId": "user1", "displayName": "Devashish", "photoLink":  "https://www.applozic.com/resources/images/applozic_icon.png"}, 
+ "user2": {"userId": "user2", "displayName": "Adarsh", 
+ "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, 
+ "user3": {"userId": "user3", "displayName": "Shanki", "photoLink": 
+ "https://www.applozic.com/resources/images/applozic_icon.png"}}; 
  ```
 
 
@@ -307,7 +313,11 @@ You can call below function to load contact list by passing contacts json as giv
 
 
 ```
- var contacts = {"contacts": [{"userId": "user1", "displayName": "Devashish", "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, {"userId": "user2", "displayName": "Adarsh", "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, {"userId": "user3", "displayName": "Shanki", "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}]}; 
+ var contacts = {"contacts": [{"userId": "user1", "displayName": "Devashish", "photoLink":  "https://www.applozic.com/resources/images/applozic_icon.png"},
+ {"userId": "user2", "displayName": "Adarsh",
+ "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"},
+ {"userId": "user3", "displayName": "Shanki", 
+ "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}]}; 
  
  $applozic.fn.applozic('loadContacts', 'put-contacts-json-here); // contacts json format given above 
  ```
@@ -484,7 +494,8 @@ Paste the following in your androidmanifest.xml:
      android:parentActivityName="<APP_PARENT_ACTIVITY>"                        
      android:theme="@style/MobiComAppBaseTheme">                         
      <!-- Parent activity meta-data to support API level 7+ -->                               
-     <meta-data  android:name="android.support.PARENT_ACTIVITY" android:value="<APP_PARENT_ACTIVITY>" />                             </activity>                                                 
+     <meta-data  android:name="android.support.PARENT_ACTIVITY" android:value="<APP_PARENT_ACTIVITY>" />
+</activity>                                                 
 
 
 <activity                                                 

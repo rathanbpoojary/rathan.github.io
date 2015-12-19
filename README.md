@@ -111,7 +111,8 @@ Example:
 ` function displayName(userId)  { `                     
  `  var contact = contacts[userId];      `          
  `// used contacts variable as given above. `               
-` if (typeof contact !== 'undefined')   { `                  
+` if (typeof contact !== 'undefined')`              
+`{ `                                      
 ` return contact.displayName; `                  
 `} } `                    
 
@@ -126,14 +127,12 @@ Example:
 
 
 
-` function contactImageSrc(userId)       `
-`{ `       
-`    var contact = contacts[userId];   // used contacts variable as given above. `       
-`    if (typeof contact !== 'undefined')        `
-{ `       
+` function contactImageSrc(userId)  { `                        
+` var contact = contacts[userId];   // used contacts variable as given above. `                      
+` if (typeof contact !== 'undefined')        `              
+`{ `                      
 ` return contact.photoLink; `          
-`    } `        
-` } `             
+`}  } `                           
  
  
  
@@ -256,14 +255,12 @@ Example:
 
 
 
-` function displayName(userId) `       
-` { `        
+` function displayName(userId)  { `                     
 `var contact = contacts[userId];  // used contacts variable as given above.`        
    ` if (typeof contact !== 'undefined')`    
-   `{ `        
+   `{ `              
 ` return contact.displayName; `       
-   ` } `       
-`} `          
+   ` } }`                           
 
 
 Step 8: Callback function to get contact image url  from userId (optional)
@@ -274,14 +271,12 @@ Example:
 
 
 
-` function contactImageSrc(userId) `       
-`{ `      
-  `   var contact = contacts[userId];   // used contacts variable as given above. `       
-  `   if (typeof contact !== 'undefined') `     
-  `{ `       
-  ` return contact.photoLink; `      
-  ` } `       
-` } `         
+` function contactImageSrc(userId) { `                       
+  `var contact = contacts[userId];   // used contacts variable as given above. `         
+  `if (typeof contact !== 'undefined') `                    
+  `{ `              
+  ` return contact.photoLink; `               
+  ` } }`                    
 
 
 
@@ -366,21 +361,15 @@ Applozic Application Key:
 Applozic Application URL:        
    
    ** java **     
-   ` <meta-data `       
-   ` android:name="com.applozic.server.url" `       
-    `android:value="https://apps.applozic.com" /> `               
+   ` <meta-data android:name="com.applozic.server.url" android:value="https://apps.applozic.com" /> `                       
     
     
  Applozic Notification package name and launcher icon:        
  
  ** java **       
-` <meta-data  `                                       
-  `android:name="com.applozic.mobicomkit.notification.icon" `           
-   `android:resource="YOUR_LAUNCHER_ICON" /> `      
+` <meta-data android:name="com.applozic.mobicomkit.notification.icon" android:resource="YOUR_LAUNCHER_ICON" /> `            
    
-` <meta-data `          
-   `android:name="com.package.name" `           
-   `android:value="${applicationId}" /> `                           
+` <meta-data android:name="com.package.name" android:value="${applicationId}" /> `                                            
    
    
    **Note**: If you are **not using gradle build** you need to replace ${applicationId}  with your Android app package name
@@ -390,9 +379,7 @@ Attachment Folder configuration:
 
 
 ** java **      
-`<meta-data `           
-  ` android:name="main_folder_name" `           
-  `  android:value="@string/default_media_location_folder" /> `                        
+`<meta-data android:name="main_folder_name" android:value="@string/default_media_location_folder" /> `                                
   
   
   
@@ -414,11 +401,9 @@ Permissions:
 
 
 ** java **      
-` <uses-permission android:name="<APP_PKG_NAME>.permission.C2D_MESSAGE" /> `            
-` <permission `             
-  ` android:name="<APP_PKG_NAME>.permission.C2D_MESSAGE" `          
-   `android:protectionLevel="signature" /> `            
-` <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" /> `               
+` <uses-permission android:name="<APP_PKG_NAME>.permission.C2D_MESSAGE" /> `              
+` <permission android:name="<APP_PKG_NAME>.permission.C2D_MESSAGE" android:protectionLevel="signature" /> `                  
+` <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" /> `                             
   
 ` <uses-permission android:name="android.permission.INTERNET" /> `                  
 ` <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"  /> `               
@@ -439,11 +424,10 @@ Broadcast Registration For PushNotification:
 
 
 ** java **    
-` <receiver `           
-`  android:name="com.applozic.mobicomkit.uiwidgets.notification.MTNotificationBroadcastReceiver"> `             
-` <intent-filter> `         
-`      <action android:name="${applicationId}.send.notification"/> `            
- ` </intent-filter> `           
+` <receiver android:name="com.applozic.mobicomkit.uiwidgets.notification.MTNotificationBroadcastReceiver"> `               
+         ` <intent-filter> `             
+          ` <action android:name="${applicationId}.send.notification"/> `                    
+         `</intent-filter> `           
 ` </receiver> `                 
 
 
@@ -462,11 +446,8 @@ Paste the following in your androidmanifest.xml:
   `  android:label="@string/app_name" `                   
   `  android:parentActivityName="<APP_PARENT_ACTIVITY>" `                        
   `  android:theme="@style/MobiComAppBaseTheme"> `                        
-   ` <!-- Parent activity meta-data to support API level 7+ --> `                             
-    ` <meta-data `                      
-` android:name="android.support.PARENT_ACTIVITY" `                           
- ` android:value="<APP_PARENT_ACTIVITY>" /> `                                  
-  `</activity> `                                               
+   ` <!-- Parent activity meta-data to support API level 7+ --> `                              
+    ` <meta-data  android:name="android.support.PARENT_ACTIVITY" android:value="<APP_PARENT_ACTIVITY>" /> `                                `</activity> `                                                
 
 
 
@@ -478,19 +459,14 @@ Paste the following in your androidmanifest.xml:
  `android:theme="@style/ContactTheme" `             
  `android:windowSoftInputMode="adjustResize"> `             
  `<!-- Parent activity meta-data to support API level 7+ --> `              
- `<meta-data `              
- `android:name="android.support.PARENT_ACTIVITY" `              
- `android:value="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity" /> `             
+ `<meta-data android:name="android.support.PARENT_ACTIVITY" `                `android:value="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity" /> `                   
 
-`<intent-filter> `              
-`<action android:name="android.intent.action.SEARCH" /> `               
-`</intent-filter>`              
+`<intent-filter> `                  
+`<action android:name="android.intent.action.SEARCH" /> `                
+`</intent-filter>`                    
 
 
-`<meta-data `               
-`android:name="android.app.searchable" `            
-`android:resource="@xml/searchable_contacts" /> `       
-`</activity> `          
+`<meta-data android:name="android.app.searchable" android:resource="@xml/searchable_contacts" /> </activity> `                             
 
 `<activity `            
 `android:name="com.applozic.mobicomkit.uiwidgets.conversation.activity.FullScreenImageActivity" `       
@@ -499,40 +475,30 @@ Paste the following in your androidmanifest.xml:
 `android:parentActivityName="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity" `            
 `android:theme="@style/MobiComAppBaseTheme"> `              
 `<!-- Parent activity meta-data to support API level 7+ --> `           
-`<meta-data `           
-`android:name="android.support.PARENT_ACTIVITY" `           
+`<meta-data android:name="android.support.PARENT_ACTIVITY" `           
 `android:value="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity" /> `              
-`</activity> `              
+`</activity> `                                 
  
-`<service `             
-`android:name="com.applozic.mobicomkit.api.conversation.MessageIntentService" `     
-`android:exported="false" /> `          
+`<service android:name="com.applozic.mobicomkit.api.conversation.MessageIntentService" android:exported="false" /> `                   
 
-`<receiver android:name="com.applozic.mobicomkit.broadcast.NotificationBroadcastReceiver"> `                
-`<intent-filter> `          
-`<action android:name="applozic.LAUNCH_APP" /> `            
-`</intent-filter> `         
-
-
-`<meta-data `       
-`android:name="activity.open.on.notification" `         
-`android:value="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity" /> `          
-`</receiver> `          
+`<receiver android:name="com.applozic.mobicomkit.broadcast.NotificationBroadcastReceiver"> `                                 
+`<intent-filter> <action android:name="applozic.LAUNCH_APP" /> </intent-filter> `                     
+`<meta-data android:name="activity.open.on.notification"`                       
+`android:value="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity" /> `              
+`</receiver> `                  
 
 
-`<receiver android:name="com.applozic.mobicomkit.broadcast.TimeChangeBroadcastReceiver"> `          
+`<receiver android:name="com.applozic.mobicomkit.broadcast.TimeChangeBroadcastReceiver"> `                 
 `<intent-filter> `          
 `<action android:name="android.intent.action.TIME_SET" /> `         
-`<action android:name="android.intent.action.TIMEZONE_CHANGED" /> `         
+`<action android:name="android.intent.action.TIMEZONE_CHANGED" /> `                
 `</intent-filter> `         
 `</receiver> `              
 
 
-`<receiver android:name="com.applozic.mobicomkit.broadcast.ConnectivityReceiver"> `         
-`<intent-filter> `          
-`<action android:name="android.net.conn.CONNECTIVITY_CHANGE" /> `           
-`</intent-filter> `         
-`</receiver> `                  
+`<receiver android:name="com.applozic.mobicomkit.broadcast.ConnectivityReceiver"> `             
+`<intent-filter> <action android:name="android.net.conn.CONNECTIVITY_CHANGE" /> </intent-filter> `                     
+`</receiver> `                    
 
 
 
@@ -547,8 +513,7 @@ Replace APP_PARENT_ACTIVITY with your app's parent activity.
 
 
 ** java **        
-` UserLoginTask.TaskListener listener = new UserLoginTask.TaskListener()`           
-`{  `           
+` UserLoginTask.TaskListener listener = new UserLoginTask.TaskListener() {  `                 
 
 ` @Override `           
 `public void onSuccess(RegistrationResponse registrationResponse, Context context)`         
@@ -558,8 +523,7 @@ Replace APP_PARENT_ACTIVITY with your app's parent activity.
 `@Override `            
 `   public void onFailure(RegistrationResponse registrationResponse, Exception exception)`          
 `{ `        
-`} `            
-` }; `          
+`}}; `                     
 
 ` User user = new User(); `         
 ` user.setUserId(userId); `         
@@ -591,7 +555,7 @@ If you already have a GCM code in your app, then copy the following code at the 
 ** java **     
 ` PushNotificationTask pushNotificationTask = null `        
 `PushNotificationTask.TaskListener listener = new PushNotificationTask.TaskListener()`      
-`{ `            
+`{ `                  
 
 ` @Override `           
 ` public void onSuccess(RegistrationResponse registrationResponse)`             
@@ -600,11 +564,10 @@ If you already have a GCM code in your app, then copy the following code at the 
 `  @Override `          
 ` public void onFailure(RegistrationResponse registrationResponse, Exception exception)`        
 `{ `            
-`} `        
-`}; `               
+`} }; `                    
 
 `pushNotificationTask = new PushNotificationTask(pushnotificationId, listener, mActivity); `            
-`pushNotificationTask.execute((Void) null); `                   
+`pushNotificationTask.execute((Void) null); `                          
 
 
 
@@ -683,10 +646,7 @@ support_contact_image_url also supports url eg:
    `  -keepattributes Signature `           
    `  -keep class sun.misc.Unsafe { *; } `          
    `  -keep class com.google.gson.examples.android.model.** { *; } `            
-   ` -keep class org.eclipse.paho.client.mqttv3.logging.JSR47Logger`        
-   `{ `                      
-   `*; `        
-   ` } `                       
+   ` -keep class org.eclipse.paho.client.mqttv3.logging.JSR47Logger { *; } `                                    
    
    
    
@@ -910,7 +870,7 @@ Are you looking for platform-native Sdks to integrate into your app. All you nee
 **Parameter Example**:    
 
 
-** json **                       
+** json **                         
 ` {"userId":"userUniqueId","password":"password","deviceType":1,"emailId":"abc@gmail.com","applicationId":"applozic-sample-app","emailVerified":1} `      
 
 
@@ -1291,10 +1251,8 @@ In your AppDelegate’s **didRegisterForRemoteNotificationsWithDeviceToken **met
   `NSLog(@"%@",error); `            
  ` return ; `           
   `} `              
- ` NSLog(@"Registration response from server:%@", rResponse); `                 
-  `  }]; `              
-  `  } `            
-` } `                          
+ ` NSLog(@"Registration response from server:%@", rResponse); `                         
+  `}]; } } `                                
 
 
 
@@ -1317,8 +1275,7 @@ Once your app receive notification, pass it to applozic handler for applozic not
  ` if (!applozicProcessed) `            
  `{ `               
   ` //Note: notification for app `          
-`  } `          
-` } `                           
+`  }  } `                                                          
 
 
 
@@ -1341,11 +1298,9 @@ Once your app receive notification, pass it to applozic handler for applozic not
  `if (!applozicProcessed)`                  
  `{ `           
    `//Note: notification for app `              
-  ` } `             
-   ` } `            
-   ` } `            
-`  return YES; `                
-` } `                       
+  ` } } } `                                  
+`  return YES; `                 
+` } `                            
 
 
 

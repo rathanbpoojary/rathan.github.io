@@ -98,7 +98,7 @@ Contacts Json format is given below as a reference used in **displayName()** and
 
 
 ```
-var contacts = {"user1": {"userId": "user1", "displayName": "Devashish", 
+var contacts = {"user1": {"userId": "user1", "displayName": "Devashish",
 "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"},
 "user2": {"userId": "user2", "displayName": "Adarsh", "photoLink":    
 "https://www.applozic.com/resources/images/applozic_icon.png"}, 
@@ -261,7 +261,8 @@ Contacts Json format is given below as a reference used in **displayName()** and
 
 
 ``` 
- var contacts = {"user1": {"userId": "user1", "displayName": "Devashish", "photoLink":  "https://www.applozic.com/resources/images/applozic_icon.png"}, 
+ var contacts = {"user1": {"userId": "user1", "displayName": "Devashish",
+ "photoLink":  "https://www.applozic.com/resources/images/applozic_icon.png"}, 
  "user2": {"userId": "user2", "displayName": "Adarsh", 
  "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, 
  "user3": {"userId": "user3", "displayName": "Shanki", "photoLink": 
@@ -313,7 +314,8 @@ You can call below function to load contact list by passing contacts json as giv
 
 
 ```
- var contacts = {"contacts": [{"userId": "user1", "displayName": "Devashish", "photoLink":  "https://www.applozic.com/resources/images/applozic_icon.png"},
+ var contacts = {"contacts": [{"userId": "user1", "displayName": "Devashish",
+ "photoLink":  "https://www.applozic.com/resources/images/applozic_icon.png"},
  {"userId": "user2", "displayName": "Adarsh",
  "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"},
  {"userId": "user3", "displayName": "Shanki", 
@@ -506,7 +508,8 @@ Paste the following in your androidmanifest.xml:
     android:theme="@style/ContactTheme"              
     android:windowSoftInputMode="adjustResize">              
     <!-- Parent activity meta-data to support API level 7+ -->               
-    <meta-data android:name="android.support.PARENT_ACTIVITY"                                    android:value="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity" />                    
+    <meta-data android:name="android.support.PARENT_ACTIVITY"
+    android:value="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity" />                    
 
 <intent-filter>                  
     <action android:name="android.intent.action.SEARCH" />                

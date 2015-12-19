@@ -1102,7 +1102,8 @@ In order to provide consistent service to all the users, there is a limitation o
 "agpzfmFwcGxvemljciYLEgZTdVVzZXIYgICAgK_               
 hmQoMCxIGRGV2aWNlGICAgICAgIAKDA","suUserKeyString":             
 "agpzfmFwcGxvemljchMLEgZTdVVzZXIYgICAgK_hmQoM",             
-"to":"123","message":"i m fine! what about u?","sent":false,"sendToDevice":true,"shared":false,"createdAtTime":1437565473333,   
+"to":"123","message":"i m fine! what about u?","sent":false,"sendToDevice":true,"shared":false,
+"createdAtTime":1437565473333,   
 "type":5,"source":1,"contactIds":"9738150..","storeOnDevice":true,"fileMetaKeyStrings":[],"read":true}]}                 
 ```
 
@@ -1315,7 +1316,8 @@ In your AppDelegate’s **didRegisterForRemoteNotificationsWithDeviceToken **met
     if (![[ALUserDefaultsHandler getApnDeviceToken] isEqualToString:apnDeviceToken])              
     {                         
        ALRegisterUserClientService *registerUserClientService = [[ALRegisterUserClientService alloc] init];          
-       [registerUserClientService updateApnDeviceTokenWithCompletion:apnDeviceToken withCompletion:^(ALRegistrationResponse
+       [registerUserClientService updateApnDeviceTokenWithCompletion
+       :apnDeviceToken withCompletion:^(ALRegistrationResponse
        *rResponse, NSError *error)       
      {              
        if (error)         
@@ -1470,7 +1472,8 @@ contact1.displayName = @"Rathan";
 contact1.email = @"123@abc.com"; //Email Id for the contact.              
 //Contact image url. Contact image would be downloaded automatically from URL.                  
 ontact1.contactImageUrl =@" https://www.applozic.com/resources/images/applozic_logo.gif";        
-contact1.localImageResourceName = @"4.jpg"; // If this field is mentioned, Contact image will be taken from local storges.   
+contact1.localImageResourceName = @"4.jpg"; // If this field is mentioned,
+Contact image will be taken from local storges.   
 ```
 
 
@@ -1508,7 +1511,8 @@ you can directly build contact from dictionary,all you have to do is just pass a
 ```
 //Contact -------- Example with json                   
 NSString *jsonString =@"{\"userId\": \"applozic\",\"fullName\": \"Applozic\",
-\"contactNumber\": \"9535008745\",\"displayName\":  \"Applozic Support\",\"contactImageUrl\": \"https://applozic.com/resources/images/aboutus/rathan.jpg\",\"email\":       
+\"contactNumber\": \"9535008745\",\"displayName\":  \"Applozic Support\",
+\"contactImageUrl\": \"https://applozic.com/resources/images/aboutus/rathan.jpg\",\"email\":       
 \"devashish@applozic.com\",\"localImageResourceName\":null}";                    
 ALContact *contact4 = [[ALContact alloc] initWithJSONString:jsonString];                        
  ```
@@ -1656,7 +1660,8 @@ You can build your contact service using applozic contact apis. Below is the sam
     //Contact -------- Example with json                             
     
     NSString *jsonString =@"{\"userId\": \"applozic\",\"fullName\": \"Applozic\",
-    \"contactNumber\": \"9535008745\",\"displayName\":      \"Applozic Support\",\"contactImageUrl\": \"https://applozic.com/resources/images/aboutus/rathan.jpg\",\"email\":                    \"devashish@applozic.com\",\"localImageResourceName\":null}";                    
+    \"contactNumber\": \"9535008745\",\"displayName\":
+    \"Applozic Support\",\"contactImageUrl\": \"https://applozic.com/resources/images/aboutus/rathan.jpg\",\"email\":                    \"devashish@applozic.com\",\"localImageResourceName\":null}";                    
     
     ALContact *contact4 = [[ALContact alloc] initWithJSONString:jsonString];                              
 
